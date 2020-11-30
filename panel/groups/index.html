@@ -26,13 +26,14 @@
        $(function(){
            $("#nav-placeholder").load("../../common/navbar.html");
            $("#search-bar").load("search-bar.html");
+           $("#footer-placeholder").load("../../common/footer.html")
        });
     </script>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!-- Nav Bar -->
-    <div id="nav-placeholder"></div>
+    <header id="nav-placeholder"></header>
     <!-- End Nav Bar -->    
     
     <div class="jumbotron jumbotron-fluid">
@@ -46,6 +47,7 @@
         <!-- Search Bar -->
         <div id="search-bar" class=''></div>
         <!-- End Search Bar -->
+        
         <!-- Table Results -->        
         <div class="results-table mt-3">
             <table>
@@ -76,8 +78,11 @@
                 </tbody>
             </table>
         </div>
+        <!-- End Table -->
     </div>
-    <!-- End Table -->
     
+    <!-- Footer -->
+    <div id="footer-placeholder" class="mt-auto"></div>
+    <!-- Footer -->
 </body>
 </html>
