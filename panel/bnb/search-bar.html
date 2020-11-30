@@ -1,0 +1,73 @@
+<form>
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-user"></i>
+                    </div>
+                </div>
+                <select id="guests" name="guests" class="custom-select">
+                    <option value="" disabled selected hidden>Guests</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-auto">
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-bed"></i>
+                    </div>
+                </div>
+                <select id="rooms" name="rooms" class="custom-select">
+                    <option value="" disabled selected hidden>Rooms</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-auto">
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                </div>
+                <select id="location" name="location" class="custom-select">
+                    <option value="" disabled selected hidden>Location</option>
+                    <option value="Rabbit">Toronto</option>
+                    <option value="Dog">Mississauga</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-auto">
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                </div>
+                <input class="form-control dates" id="start_date" name="start_date" placeholder="Start Date" type="text"/>
+                <input class="form-control dates" id="end_date" name="end_date" placeholder="End Date" type="text"/>
+            </div>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Search</button>
+        </div>
+    </div>
+</form>
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css">
+<script type="text/javascript" src="../../js/date-picker.js"></script>

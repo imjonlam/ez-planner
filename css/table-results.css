@@ -1,0 +1,68 @@
+/* Element Selectors */
+.results-table table {
+    width: 100%;
+    background-color: #fff;
+}
+
+.results-table th, .results-table td {
+  font-weight: unset;
+  padding-right: 10px;
+}
+
+ .results-table th {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-size: 18px;
+  color: #0f7bf9;
+}
+
+.results-table td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 15px;
+  color: #808080;
+}
+
+.results-table thead {
+  width: 100%;
+  top: 0;
+  left: 0;
+    
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.results-table tbody {
+  max-height: 585px;
+  overflow: auto;
+}
+
+/* Class Selectors */
+.results-table {
+  position: relative;
+}
+
+.col1 {
+  width: 33%;
+  padding-left: 40px;
+}
+
+.col2 {
+  width: 13%;
+}
+
+.col3 {
+  width: 22%;
+}
+
+.col4 {
+  width: 19%;
+}
+
+.col5 {
+  width: 13%;
+}
