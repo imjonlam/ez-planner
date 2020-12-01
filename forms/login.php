@@ -11,10 +11,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,300;0,700;0,800;1,100;1,600;1,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="cps530.css">
+    <link rel="stylesheet" href="/~auchimar/CPS530/css/cps530.css">
 </head>
 
 <body>
+    <?php
+        include '/~auchimar/CPS530/common/navbar.html';
+    ?>
     <div class="container">
         <div class="row justify-content-center center-height">
             <div class="mb-3"></div>
@@ -36,7 +39,7 @@
                 </form>
                 <div class="mb-3"></div>
                 <div class="text-center">
-                    <p>Don't have an account? <a href="registration.html">Sign Up</a></p>
+                    <p>Don't have an account? <a href="registration.php">Sign Up</a></p>
                 </div>
             </div>
         </div>

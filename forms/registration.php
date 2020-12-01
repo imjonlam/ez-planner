@@ -11,15 +11,28 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,300;0,700;0,800;1,100;1,600;1,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="cps530.css">
+    <link rel="stylesheet" href="/~auchimar/CPS530/css/cps530.css">
 </head>
-
-<body>
-    <div class="container">
+    <body>
+        <?php
+            include '/~auchimar/CPS530/common/navbar.html';
+        ?>
+        
+        <div class="container">
         <div class="row justify-content-center center-height">
             <h2 class="display-5 text-center">Register Today</h2>
         </div>
-        <form action="" class="form">
+        <form action="registrationconfirm.php" class="form">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstname">First Name</label>
+                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Nick" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Smith" required>
+                </div>
+            </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="email">Email</label>
@@ -69,12 +82,10 @@
             <div class="text-center">
                 <button type="submit" class="btn btn-primary btn-long">Register</button>
             </div>
-
-
-
-
         </form>
-    </div>
+        </div>
+
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -85,5 +96,4 @@
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
         crossorigin="anonymous"></script>
 </body>
-
 </html>
