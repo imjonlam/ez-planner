@@ -11,12 +11,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,300;0,700;0,800;1,100;1,600;1,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/~auchimar/CPS530/css/cps530.css">
+    <link rel="stylesheet" href="">
 </head>
 
 <body>
     <?php
-        include '/~auchimar/CPS530/common/navbar.html';
+        include "../common/navbar.html";
     ?>
     <div class="container">
         <div class="row justify-content-center center-height">

@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="/~auchimar/CPS530/css/cps530.css">
 </head>
     <body>
-        <?php
-            include '/~auchimar/CPS530/common/navbar.html';
-        ?>
+    <?php
+        include "../common/navbar.html";
+    ?>
         
         <div class="container">
         <div class="row justify-content-center center-height">
