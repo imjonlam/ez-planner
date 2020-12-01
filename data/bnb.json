@@ -1,0 +1,82 @@
+[
+  {
+    "place": "Intercontinental Toronto Centre",
+    "location": "225 Front Street West",
+    "city": "Toronto",
+    "province": "ON",
+    "contact": "+1 416 597 1400",
+    "price": 134
+  },  
+  {
+    "place": "Town Inn Suites Toronto",
+    "location": "620 Church Street",
+    "city": "Toronto",
+    "province": "ON",
+    "contact": "+1 416 964 3311",
+    "price": 80
+  },  
+  {
+    "place": "Town Inn Suites Toronto",
+    "location": "620 Church Street",
+    "city": "Toronto",
+    "province": "ON",
+    "contact": "+1 416 964 3311",
+    "price": 80
+  }, 
+  {
+    "place": "Town Inn Suites Toronto",
+    "location": "60 York Street",
+    "city": "Toronto",
+    "province": "ON",
+    "contact": "+1 416 363 3321",
+    "price": 126
+  },  
+  {
+    "place": "Le St-Martin Hôtel Particulier Montréal",
+    "location": "980 Boul. De Maisonneuve West",
+    "city": "Montreal",
+    "province": "QC",
+    "contact": "+1 514 843 3000",
+    "price": 161
+  },  
+  {
+    "place": "Hotel Bonaventure Montreal",
+    "location": "900 de La Gauchetiere W.",
+    "city": "Montreal",
+    "province": "QC",
+    "contact": "+1 514 878 2332",
+    "price": 169
+  },
+  {
+    "place": "Shangri-La Hotel Toronto",
+    "location": "188 University Avenue",
+    "city": "Toronto",
+    "province": "ON",
+    "contact": "+1 647 788 8888",
+    "price": 472
+  },   
+  {
+    "place": "Wyndham Garden Calgary Airport",
+    "location": "11 Freeport Cres Northeast",
+    "city": "Calgary",
+    "province": "AB",
+    "contact": "+1 403 516 2266",
+    "price": 91
+  },   
+  {
+    "place": "Hotel Arts",
+    "location": "119 12th Avenue Sw",
+    "city": "Calgary",
+    "province": "AB",
+    "contact": "+1 403 266 4611",
+    "price": 165
+  }, 
+  {
+    "place": "Hotel Le Germain Montreal",
+    "location": "2050 Rue Mansfield",
+    "city": "Montreal",
+    "province": "QC",
+    "contact": "+1 514 849 2050",
+    "price": 262
+  }
+]

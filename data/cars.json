@@ -1,0 +1,98 @@
+[
+    {
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "year": 2005,
+        "type": "sedan",
+        "capacity": 4,
+        "price": 32
+    },        
+    {
+        "make": "STERLING TRUCK",
+        "model": "A9500",
+        "year": 2010,
+        "type": "truck",
+        "capacity": 4,
+        "price": 42
+    },        
+    {
+        "make": "NISSAN",
+        "model": "ALMERA",
+        "year": 2001,
+        "type": "sedan",
+        "capacity": 4,
+        "price": 47
+    },        
+    {
+        "make": "HONDA",
+        "model": "PILOT",
+        "year": 2011,
+        "type": "sedan",
+        "capacity": 4,
+        "price": 17
+    },        
+    {
+        "make": "LAND ROVER",
+        "model": "DEFENDER",
+        "year": 2011,
+        "type": "suv",
+        "capacity": 6,
+        "price": 44
+    },        
+    {
+        "make": "MERCEDES-BENZ",
+        "model": "B250",
+        "year": 2013,
+        "type": "sedan",
+        "capacity": 4,
+        "price": 44
+    },        
+    {
+        "make": "SATURN",
+        "model": "SKY",
+        "year": 2008,
+        "type": "sedan",
+        "capacity": 4,
+        "price": 32
+    },        
+    {
+        "make": "ACURA",
+        "model": "TL",
+        "year": 2014,
+        "type": "sedan",
+        "capacity": 4,
+        "price": 32
+    },        
+    {
+        "make": "NISSAN",
+        "model": "LEAF",
+        "year": 2011,
+        "type": "sedan",
+        "capacity": 4,
+        "price": 13
+    },        
+    {
+        "make": "CHEVROLET",
+        "model": "CORVETTE",
+        "year": 2006,
+        "type": "coupe",
+        "capacity": 2,
+        "price": 60
+    },        
+    {
+        "make": "MERCEDES-BENZ",
+        "model": "ML350",
+        "year": 2009,
+        "type": "sedan",
+        "capacity": 4,
+        "price": 44
+    },        
+    {
+        "make": "HUMMER",
+        "model": "H2",
+        "year": 2008,
+        "type": "sedan",
+        "capacity": 6,
+        "price": 66
+    }
+]
