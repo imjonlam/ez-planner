@@ -24,11 +24,11 @@
     
     <script>
         $(function() {
-            $("#nav-placeholder").load("../../common/navbar.html");
+            $("#nav-placeholder").load("/common/navbar.html");
             $("#search-bar").load("search-bar.html");
-            $("#footer-placeholder").load("../../common/footer.html")
+            $("#footer-placeholder").load("/common/footer.html")
 
-            $.getJSON("../../data/groups.json", function(data) {
+            $.getJSON("/data/groups.json", function(data) {
                 var tbody = '';
                 $.each(data, function(key, value) {
                     tbody += '<tr>';
