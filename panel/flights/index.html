@@ -34,12 +34,15 @@
                     tbody += '<tr>';
                     tbody += '<td class="col4">' + value.airline + '</td>';
                     tbody += '<td class="col6">' + value.from + '</td>';
+                    tbody += '<td class="col6 invisible collapse">' + value.from_abbr + '</td>';
                     tbody += '<td class="col6">' + value.to + '</td>';
+                    tbody += '<td class="col6 invisible collapse">' + value.to_abbr + '</td>';
                     tbody += '<td class="col6">' + value.stops + '</td>';
                     tbody += '<td class="col6">' + value.duration + '</td>';
                     tbody += '<td class="col6">' + value.type + '</td>';
                     tbody += '<td class="col6">' + value.price + '</td>';
-                    tbody += '<td class="col6"><button name="save" class="save-btn btn btn-secondary" value="X" onclick="getRow(this)">Save</button></td>';
+                    tbody += '<td class="col6 invisible collapse">' + value.img + '</td>';
+                    tbody += '<td class="col6"><button name="save" class="save-btn btn btn-secondary" onclick="getRow(this)">Save</button></td>';
                     tbody += '</tr>';
                 });
                 $('#data').append(tbody);
@@ -51,10 +54,12 @@
             var $tds = $(btn).closest("tr").find("td");
             $.each($tds, function() {
                 if (!['Save', 'Join'].includes($(this).text())) {
-                    arr.push($(this).text())
+                    arr.push($(this).text());
                 }
             });
-            $("#resultas").append(arr.join(', '));    
+            
+            localStorage.setItem("flight", JSON.stringify(arr));
+            window.close();
         }
     </script>
 </head>
@@ -83,12 +88,15 @@
                     <tr>
                         <th class="col4">Airline</th>
                         <th class="col6">From</th>
+                        <th class="col6 d-none">From-Abbr</th>
                         <th class="col6">To</th>
+                        <th class="col6 d-none">To-Abbr</th>
                         <th class="col6">Stops</th>
                         <th class="col6">Duration</th>
                         <th class="col6">Type</th>
                         <th class="col6">Price</th>
                         <th class="col6">Action</th>
+                        <th class="col6 d-none">Image</th>
                     </tr>
                 </thead>
                 <tbody id="data"></tbody>

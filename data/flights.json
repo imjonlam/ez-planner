@@ -1,100 +1,134 @@
 [
     {
         "airline": "Air Canada",
-        "from": "YYZ",
-        "to": "YUL",
+        "from": "Toronto",
+        "to": "Montreal",
+        "from_abbr": "YYZ",
+        "to_abbr": "YUL",
         "stops": "direct",
         "duration": "1h 16m",
         "type": "Standard",
-        "price": 202
+        "price": 202,
+        "img": ""
     },
     {
         "airline": "WestJet",
-        "from": "YYZ",
-        "to": "YUL",
+        "from": "Toronto",
+        "to": "Montreal",
+        "from_abbr": "YYZ",
+        "to_abbr": "YUL",
         "stops": "direct",
         "duration": "1h 32m",
         "type": "Basic",
-        "price": 206
+        "price": 206,
+        "img": ""
     },
     {
         "airline": "Air Transat",
-        "from": "YYZ",
-        "to": "YUL",
+        "from": "Toronto",
+        "to": "Montreal",
+        "from_abbr": "YYZ",
+        "to_abbr": "YUL",
         "stops": "direct",
         "duration": "1h 16m",
         "type": "Standard",
-        "price": 211
+        "price": 211,
+        "img": ""
     },    
     {
         "airline": "Air Canada",
-        "from": "YYZ",
-        "to": "YOW",
+        "from": "Toronto",
+        "to": "Ottawa",
+        "from_abbr": "YYZ",
+        "to_abbr": "YOW",
         "stops": "direct",
         "duration": "1h 01m",
         "type": "Standard",
-        "price": 223
+        "price": 223,
+        "img": ""
     },     
     {
         "airline": "WestJet",
-        "from": "YYZ",
-        "to": "YOW",
+        "from": "Toronto",
+        "to": "Ottawa",
+        "from_abbr": "YYZ",
+        "to_abbr": "YOW",
         "stops": "direct",
         "duration": "1h 19m",
         "type": "Standard",
-        "price": 188
+        "price": 188,
+        "img": ""
     },    
     {
         "airline": "Porter Airlines",
-        "from": "YYZ",
-        "to": "YQT",
+        "from": "Toronto",
+        "to": "Thunder Bay",
+        "from_abbr": "YYZ",
+        "to_abbr": "YQT",
         "stops": "direct",
         "duration": "2h 00m",
         "type": "Standard",
-        "price": 315
+        "price": 315,
+        "img": ""
     },    
     {
         "airline": "Air Canada",
-        "from": "YYZ",
-        "to": "YQT",
+        "from": "Toronto",
+        "to": "Thunder Bay",
+        "from_abbr": "YYZ",
+        "to_abbr": "YQT",
         "stops": "direct",
         "duration": "1h 48m",
         "type": "Standard",
-        "price": 323
+        "price": 323,
+        "img": ""
     },    
     {
         "airline": "WestJet",
-        "from": "YYZ",
-        "to": "YQT",
+        "from": "Toronto",
+        "to": "Thunder Bay",
+        "from_abbr": "YYZ",
+        "to_abbr": "YQT",
         "stops": "direct",
         "duration": "2h 15m",
         "type": "Standard",
-        "price": 315
+        "price": 315,
+        "img": ""
     },    
     {
         "airline": "WestJet",
-        "from": "YYZ",
-        "to": "YYC",
+        "from": "Toronto",
+        "to": "Calgary",
+        "from_abbr": "YYZ",
+        "to_abbr": "YYC",
         "stops": "direct",
         "duration": "4h 09m",
         "type": "Standard",
-        "price": 374
+        "price": 374,
+        "img": ""
     },  
     {
         "airline": "Air Canada",
-        "from": "YYZ",
-        "to": "YYC",
+        "from": "Toronto",
+        "to": "Calgary",
+        "from_abbr": "YYZ",
+        "to_abbr": "YYC",
         "stops": "direct",
         "duration": "3h 56m",
         "type": "Standard",
-        "price": 374
-    },    {
+        "price": 374,
+        "img": ""
+    },    
+    {
         "airline": "Air Canada",
-        "from": "YYZ",
-        "to": "YYJ",
+        "from": "Toronto",
+        "to": "Victoria",
+        "from_abbr": "YYZ",
+        "to_abbr": "YYJ",
         "stops": "direct",
         "duration": "4h 30m",
         "type": "Standard",
-        "price": 649
+        "price": 649,
+        "img": ""
     }
 ]
