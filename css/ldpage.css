@@ -9,13 +9,10 @@ body{
   font-size:17px;
   color:#fff;
   line-height:1.6;
-}
-
-#LandingPage{
-  background-image:url('background.jpg');/*insert background image*/
+  background-image: url('../img/background.jpg');
   background-size:cover;
   background-position:center;
-  height:100vh;/*viewport height*/
+  height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -24,16 +21,16 @@ body{
   padding:0 20px;
 }
 
-#LandingPage h1{
+h1{
   font-size:60px;
   line-height:1.2;
 }
 
-#LandingPage p{
+p{
   font-size:20px;
 }
 
-#LandingPage .button{
+.button{
   font-size:30px;
   text-decoration:none;
   color:#fff;
@@ -43,7 +40,7 @@ body{
   margin-top:20px;
 }
 
-#LandingPage .button:hover{
+.button:hover{
   background:#00cccc;
   color:#fff;
   border:#00cccc 2px solid;
