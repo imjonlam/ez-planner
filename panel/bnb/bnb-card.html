@@ -7,25 +7,49 @@
             <div class="col-5">
                 <div class="card-block px-2 pt-5 pl-4">
                     <h4 id="location" class="card-title">Wyndham Garden Calgary Airport</h4>
-                    <p id="ratings" class="card-text">&#9733;&#9733;&#9733;&#9733;</p>
+                    <p id="rating" class="card-text">&#9733;&#9733;&#9733;&#9733;</p>
                     <p class="card-text">
                         <span id="address">11 Freeport Cres Northeast</span>, 
                         <span id="city">Calgary</span>,
                         <span id="province">AB</span>
                         <span id="postal-code">T3J 0T4</span>, 
-                        <span id="country">Canada</span></p>
+                        <span id="country">Canada</span>
+                    </p>
                     <p id="cantact" class="card-text">+1 403 516 2266</p>
                 </div>
             </div>
             <div class="col px-2 my-auto text-center">
                 <h3>
-                    $<span id="price">500</span> CAD
+                    $<span id="bnb-price">500</span> CAD
                 </h3>
                 <p><i>per night</i></p>
             </div>
         </div>
         <div class="card-footer bg-white w-100 text-muted">
-            <a class="btn btn-secondary float-right" href="../bnb/">Find Bread and Breakfasts</a>
+            <a class="btn btn-secondary float-right" href="../bnb/" target="_blank">Find Bread and Breakfasts</a>
         </div>
     </div>
 </div>
+
+<script>
+    loadBNB();
+    document.addEventListener("visibilitychange", function() {
+        loadBNB();
+    });
+    
+    function loadBNB() {
+        var bnb = JSON.parse(localStorage.getItem("bnb"));
+        if (bnb) {
+            document.getElementById("location").innerHTML = bnb[0];
+            document.getElementById("address").innerHTML = bnb[1];
+            document.getElementById("city").innerHTML = bnb[2];
+            document.getElementById("province").innerHTML = bnb[3];
+            document.getElementById("postal-code").innerHTML = bnb[4];
+            document.getElementById("country").innerHTML = bnb[5];
+            document.getElementById("cantact").innerHTML = bnb[6];
+            document.getElementById("bnb-price").innerHTML = bnb[7];   
+            document.getElementById("rating").innerHTML = '&#9733'.repeat(bnb[8]);   
+            document.getElementById("img").innerHTML = bnb[9];   
+        }
+    }  
+</script>

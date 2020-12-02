@@ -32,18 +32,35 @@
                 var tbody = '';
                 $.each(data, function(key, value) {
                     tbody += '<tr>';
-                    tbody += '<td class="col4">' + value.place + '</td>';
-                    tbody += '<td class="col6">' + value.location + '</td>';
+                    tbody += '<td class="col4">' + value.location + '</td>';
+                    tbody += '<td class="col6">' + value.address + '</td>';
                     tbody += '<td class="col6">' + value.city + '</td>';
                     tbody += '<td class="col6">' + value.province + '</td>';
+                    tbody += '<td class="col6 invisible collapse">' + value.postal + '</td>';
+                    tbody += '<td class="col6 invisible collapse">' + value.country + '</td>';
                     tbody += '<td class="col6">' + value.contact + '</td>';
                     tbody += '<td class="col6">' + value.price + '</td>';
-                    tbody += '<td class="col6"><button name="save" type="submit" class="btn btn-secondary" value="X">Save</button></td>';
+                    tbody += '<td class="col6 invisible collapse">' + value.rating + '</td>';
+                    tbody += '<td class="col6 invisible collapse">' + value.img + '</td>';
+                    tbody += '<td class="col6"><button name="save" class="save-btn btn btn-secondary" onclick="getRow(this)">Save</button></td>';
                     tbody += '</tr>';
                 });
                 $('#data').append(tbody);
             });
         });
+    
+        function getRow(btn) {
+            var arr = Array();
+            var $tds = $(btn).closest("tr").find("td");
+            $.each($tds, function() {
+                if (!['Save', 'Join'].includes($(this).text())) {
+                    arr.push($(this).text());
+                }
+            });
+            
+            localStorage.setItem("bnb", JSON.stringify(arr));
+            window.close();
+        }
     </script>
 </head>
 
@@ -72,8 +89,12 @@
                         <th class="col6">Address</th>
                         <th class="col6">City</th>
                         <th class="col6">Province</th>
+                        <th class="col6 d-none">Postal Code</th>
+                        <th class="col6 d-none">Country</th>
                         <th class="col6">Contact</th>
                         <th class="col6">Price</th>
+                        <th class="col6 d-none">Rating</th>
+                        <th class="col6 d-none">Image</th>
                         <th class="col6">Action</th>
                     </tr>
                 </thead>
