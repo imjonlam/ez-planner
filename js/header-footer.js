@@ -19,26 +19,26 @@ code =
 if (title == "EZ Planner: Welcome!") {
     code = code +
         "<li class=\"nav-item active\">" +
-        "    <a class=\"nav-link nav-current\" href = \"#\">Home<span class=\"sr-only\">(current)</span></a >" +
+        "    <a class=\"nav-link nav-current\" href = \"http://webdev.scs.ryerson.ca/~auchimar/\">Home<span class=\"sr-only\">(current)</span></a >" +
         "</li >";
 } else {
     code = code +
         "<li class=\"nav-item\">" +
-        "    <a class=\"nav-link\" href = \"#\" >Home</a >" +
+        "    <a class=\"nav-link\" href = \"http://webdev.scs.ryerson.ca/~auchimar/\" >Home</a >" +
         "</li >";
 }
 if (title == "Itinerary") {
     code = code +
         "<li class=\"nav-item active\">" +
-        "    <a class=\"nav-link nav-current\" href = \"/~auchimar/CPS530/panel/groups/index.html\" >My Trips<span class=\"sr-only\">(current)</span></a > " +
+        "    <a class=\"nav-link nav-current\" href = \"../panel/Itinerary/itinerary.html\" >My Trips<span class=\"sr-only\">(current)</span></a > " +
         "</li >";
 } else {
     code = code +
         "<li class=\"nav-item\">" +
-        "    <a class=\"nav-link\" href = \"/~auchimar/CPS530/panel/groups/index.html\" >My Trips</a > " +
+        "    <a class=\"nav-link\" href = \"../panel/Itinerary/itinerary.html\" >My Trips</a > " +
         "</li >";
 }
-if (title == "Homes for Rent") {
+if (title == "Homes for Rent") { 
     code = code +
         "<li class=\"nav-item dropdown active\">" +
         "    <a class=\"nav-link dropdown-toggle nav-current\" href = \"#\" id = \"navbarDropdownMenuLink\" role = \"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">" +
@@ -46,7 +46,7 @@ if (title == "Homes for Rent") {
         "    </a >" +
         "    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">" +
         "        <a class=\"dropdown-item\" href=\"#\">Hotels</a>" +
-        "        <a class=\"dropdown-item\" href=\"/~auchimar/CPS530/panel/bnb/index.html\">Airbnb</a>" +
+        "        <a class=\"dropdown-item\" href=\"../panel/bnb/index.html\">Airbnb</a>" +
         "    </div>" +
         "</li >";
 } else {
@@ -57,7 +57,7 @@ if (title == "Homes for Rent") {
         "    </a >" +
         "    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">" +
         "        <a class=\"dropdown-item\" href=\"#\">Hotels</a>" +
-        "        <a class=\"dropdown-item\" href=\"/~auchimar/CPS530/panel/bnb/index.html\">Airbnb</a>" +
+        "        <a class=\"dropdown-item\" href=\"../panel/bnb/index.html\">Airbnb</a>" +
         "    </div>" +
         "</li >";
 }
@@ -68,8 +68,8 @@ if (title == "Book Flights" || title == "Vehicles for Rent") {
         "        Transportation<span class=\"sr-only\">(current)</span>" +
         "    </a >" +
         "    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">" +
-    "        <a class=\"dropdown-item\" href=\"/~auchimar/CPS530/panel/flights/index.html\">Flights</a>" +
-        "        <a class=\"dropdown-item\" href=\"/~auchimar/CPS530/panel/cars/index.html\">Car Rentals</a>" +
+    "        <a class=\"dropdown-item\" href=\"../panel/cars/index.html\">Flights</a>" +
+        "        <a class=\"dropdown-item\" href=\"../panel/flights/index.html\">Car Rentals</a>" +
         "    </div>" +
         "</li >";
 } else {
@@ -79,8 +79,8 @@ if (title == "Book Flights" || title == "Vehicles for Rent") {
         "        Transportation" +
         "    </a >" +
         "    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">" +
-    "        <a class=\"dropdown-item\" href=\"/~auchimar/CPS530/panel/flights/index.html\">Flights</a>" +
-        "        <a class=\"dropdown-item\" href=\"/~auchimar/CPS530/panel/cars/index.html\">Car Rentals</a>" +
+    "        <a class=\"dropdown-item\" href=\"../panel/cars/index.html\">Flights</a>" +
+        "        <a class=\"dropdown-item\" href=\"../panel/flights/index.html\">Car Rentals</a>" +
         "    </div>" +
         "</li >";
 }
