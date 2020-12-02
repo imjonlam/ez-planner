@@ -1,5 +1,5 @@
 body {
-    background-color: #a0b2bc;
+    background-color: #f2f2f2;
     font-family: 'prompt', sans-serif;
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 /*Header CSS*/
-
+/*
 header {
     background-color: #648698;
     padding-top: 5px;
@@ -79,9 +79,10 @@ nav {
     border-radius: 10px;
     background-color: #648698;
 }
+*/
 
 /*Footer CSS*/
-
+/*
 footer {
     background-color: #648698;
 }
@@ -101,5 +102,6 @@ footer {
     padding: 0px;
 }
 
+*/
 
 
