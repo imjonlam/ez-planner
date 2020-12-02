@@ -25,6 +25,79 @@ body {
     border-radius: 10px;
 }
 
+/*Header CSS*/
 
+header {
+    background-color: #648698;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 40px;
+}
+
+nav {
+    background-color: #648698;
+    font-size: 16px;
+}
+
+    nav:hover > div > ul > li > a.nav-current {
+        background-color: #648698;
+    }
+
+.navbar-light {
+    color: #a0b2bc;
+}
+
+.nav-item {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: #a0b2bc;
+}
+
+    .nav-item:hover {
+        padding-bottom: 5px;
+        padding-top: 5px;
+        color: black;
+        border-radius: 10px;
+        background-color: #a0b2bc;
+    }
+
+        .nav-item:hover > a.nav-current {
+            background-color: #a0b2bc;
+        }
+
+.nav-current {
+    border-radius: 10px;
+    background-color: #a0b2bc;
+}
+
+.dropdown-menu {
+    background-color: #a0b2bc;
+    border-radius: 10px;
+}
+
+.dropdown-item:hover {
+    border-radius: 10px;
+    background-color: #648698;
+}
+
+/*Footer CSS*/
+footer {
+    background-color: #648698;
+}
+
+.list-unstyled > li > a {
+    color: #a0b2bc;
+}
+
+.list-unstyled > li {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.footer-copyright {
+    color: #a0b2bc;
+    font-size: 14px;
+    padding: 0px;
+}
 
 
