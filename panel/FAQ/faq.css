@@ -26,37 +26,17 @@ body{
 
 #FAQ h1{
   font-size:50px;
-  line-height:1.2;s
+  line-height:1.2;
 }
 
 #FAQ p{
   font-size:20px;
 }
 
-#back{
-  margin-left: 15vw;
-  margin-top:5vh;
-}
-
-#back .button{
-  font-size:20px;
-  text-decoration:none;
-  color:black;
-  border:black 2px solid;
-  padding:10px 20px;/* QUESTION:  */
-  border-radius:10px;
-  margin-top:20px;
-}
-
-#back .button:hover{
-  background:#00cccc;
-  color:#fff;
-  border:#00cccc 2px solid;
-}
 
 #sections{
   padding:20px;
-  background:#00cccc;
+  background:#648698;
   color:#fff;
   text-align:center;
   margin-left: 15vw;
