@@ -1,0 +1,50 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+body{
+  margin:0;
+  font-family: 'prompt', sans-serif;
+  font-size:17px;
+  color:#fff;
+  line-height:1.6;
+}
+
+#LandingPage{
+  background-image:url('background.jpg');/*insert background image*/
+  background-size:cover;
+  background-position:center;
+  height:100vh;/*viewport height*/
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 20px;
+}
+
+#LandingPage h1{
+  font-size:60px;
+  line-height:1.2;
+}
+
+#LandingPage p{
+  font-size:20px;
+}
+
+#LandingPage .button{
+  font-size:30px;
+  text-decoration:none;
+  color:#fff;
+  border:#fff 2px solid;
+  padding:10px 20px;
+  border-radius:10px;
+  margin-top:20px;
+}
+
+#LandingPage .button:hover{
+  background:#00cccc;
+  color:#fff;
+  border:#00cccc 2px solid;
+}
