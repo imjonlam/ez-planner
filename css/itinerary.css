@@ -104,6 +104,7 @@ a {
   text-align:center;
   margin-left: 15vw;
   margin-right: 15vw;
+  border-radius: 15px;
 }
 
 #section1 .button{
@@ -127,6 +128,7 @@ a {
   text-align:center;
   margin-left: 15vw;
   margin-right: 15vw;
+  border-radius: 15px;
 }
 
 #section2 .button{
