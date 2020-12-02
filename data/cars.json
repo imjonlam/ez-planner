@@ -3,9 +3,12 @@
         "make": "TOYOTA",
         "model": "CAMRY",
         "year": 2005,
-        "type": "sedan",
+        "type": "Sedan",
         "capacity": 4,
-        "price": 32
+        "price": 32,
+        "transmission": "Automatic",
+        "allowance": "3000",
+        "img": ""
     },        
     {
         "make": "STERLING TRUCK",
@@ -13,86 +16,119 @@
         "year": 2010,
         "type": "truck",
         "capacity": 4,
-        "price": 42
+        "price": 42,
+        "transmission": "Manual",
+        "allowance": "3500",
+        "img": ""
     },        
     {
         "make": "NISSAN",
         "model": "ALMERA",
         "year": 2001,
-        "type": "sedan",
+        "type": "Sedan",
         "capacity": 4,
-        "price": 47
+        "price": 47,
+        "transmission": "Automatic",
+        "allowance": "3000",
+        "img": ""
     },        
     {
         "make": "HONDA",
         "model": "PILOT",
         "year": 2011,
-        "type": "sedan",
+        "type": "Sedan",
         "capacity": 4,
-        "price": 17
+        "price": 17,
+        "transmission": "Automatic",
+        "allowance": "3000",
+        "img": ""
     },        
     {
         "make": "LAND ROVER",
         "model": "DEFENDER",
         "year": 2011,
-        "type": "suv",
+        "type": "Suv",
         "capacity": 6,
-        "price": 44
+        "price": 44,
+        "transmission": "Automatic",
+        "allowance": "1000",
+        "img": ""
     },        
     {
         "make": "MERCEDES-BENZ",
         "model": "B250",
         "year": 2013,
-        "type": "sedan",
+        "type": "Sedan",
         "capacity": 4,
-        "price": 44
+        "price": 44,
+        "transmission": "Automatic",
+        "allowance": "1500",
+        "img": ""
     },        
     {
         "make": "SATURN",
         "model": "SKY",
         "year": 2008,
-        "type": "sedan",
+        "type": "Sedan",
         "capacity": 4,
-        "price": 32
+        "price": 32,
+        "transmission": "Automatic",
+        "allowance": "3500",
+        "img": ""
     },        
     {
         "make": "ACURA",
         "model": "TL",
         "year": 2014,
-        "type": "sedan",
+        "type": "Sedan",
         "capacity": 4,
-        "price": 32
+        "price": 32,
+        "transmission": "Automatic",
+        "allowance": "3000",
+        "img": ""
     },        
     {
         "make": "NISSAN",
         "model": "LEAF",
         "year": 2011,
-        "type": "sedan",
+        "type": "Sedan",
         "capacity": 4,
-        "price": 13
+        "price": 13,
+        "transmission": "3500",
+        "allowance": "Automatic",
+        "img": ""
     },        
     {
         "make": "CHEVROLET",
         "model": "CORVETTE",
         "year": 2006,
-        "type": "coupe",
+        "type": "Coupe",
         "capacity": 2,
-        "price": 60
+        "price": 60,
+        "transmission": "Manual",
+        "allowance": "1000",
+        "img": ""
     },        
     {
         "make": "MERCEDES-BENZ",
         "model": "ML350",
         "year": 2009,
-        "type": "sedan",
+        "type": "Sedan",
         "capacity": 4,
-        "price": 44
+        "price": 44,
+        "transmission": "Automatic",
+        "allowance": "1500",
+        "img": ""
     },        
     {
         "make": "HUMMER",
         "model": "H2",
         "year": 2008,
-        "type": "sedan",
+        "type": "Sedan",
         "capacity": 6,
-        "price": 66
+        "price": 66,
+        "transmission": "Automatic",
+        "allowance": "2000",
+        "img": ""
     }
 ]

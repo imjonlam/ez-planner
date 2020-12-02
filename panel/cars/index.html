@@ -37,14 +37,31 @@
                     tbody += '<td class="col6">' + value.model + '</td>';
                     tbody += '<td class="col6">' + value.year + '</td>';
                     tbody += '<td class="col6">' + value.type + '</td>';
-                    tbody += '<td class="col6">' + value.capacity + '</td>';
                     tbody += '<td class="col6">' + value.price + '</td>';
-                    tbody += '<td class="col6"><button name="save" type="submit" class="btn btn-secondary" value="X">Save</button></td>';
+                    tbody += '<td class="col6">' + value.capacity + '</td>';
+                    tbody += '<td class="col6"><button name="save" class="save-btn btn btn-secondary" onclick="getRow(this)">Save</button></td>';
+                    tbody += '<td class="col6 invisible collapse ">' + value.transmission + '</td>';
+                    tbody += '<td class="col6 invisible collapse ">' + value.allowance + '</td>';
+                    tbody += '<td class="col6 invisible collapse ">' + value.img + '</td>';
                     tbody += '</tr>';
                 });
                 $('#data').append(tbody);
             });
         });
+          
+        function getRow(btn) {
+            var arr = Array();
+            var $tds = $(btn).closest("tr").find("td");
+            $.each($tds, function() {
+                if (!['Save', 'Join'].includes($(this).text())) {
+                    arr.push($(this).text());
+                }
+            });
+            
+            localStorage.setItem("car", JSON.stringify(arr));
+            var car = JSON.parse(localStorage.getItem("car"));
+            window.close();
+        }
     </script> 
     <title>Vehicles for Rent</title>
 </head>
@@ -78,6 +95,9 @@
                         <th class="col6">Price</th>
                         <th class="col6">Capacity</th>
                         <th class="col6">Rent</th>
+                        <th class="col6 d-none">Transmission</th>
+                        <th class="col6 d-none">Allowance</th>
+                        <th class="col6 d-none">Image</th>
                     </tr>
                 </thead>
                 <tbody id="data"></tbody>

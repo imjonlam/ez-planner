@@ -2,7 +2,7 @@
     <div class="card">
         <div class="row no-gutters">
             <div class="col-auto">
-                <img src="//placehold.it/300" class="img-fluid" width="300" height="300" alt="">
+                <img src="//placehold.it/300" id="car-img" class="img-fluid" width="300" height="300" alt="">
             </div>
             <div class="col-5">
                 <div class="card-block px-2 pt-5 pl-4">
@@ -12,22 +12,44 @@
                     </h4>
                     <div id="car-specs" class="mb-3">
                         <i class="fa fa-user"></i><span id="passengers" class="pl-2 pr-2">4</span>
-                        <i class="fa fa-car"></i><span id="type" class="pl-2 pr-2">suv</span>
-                        <i class="fa fa-birthday-cake"></i><span id="year" class="pl-2 pr-2">2005</span>
+                        <i class="fa fa-car"></i><span id="car-type" class="pl-2 pr-2">suv</span>
+                        <i class="fa fa-birthday-cake"></i><span id="car-year" class="pl-2 pr-2">2005</span>
                     </div>
-                    <p class="card-text"><span id="transmission" class="font-weight-bold">Transmission: </span><span>Automatic</span></p>
-                    <p class="card-text"><span id="allowance" class="font-weight-bold">KM Allowance: </span><span>3000KM</span></p>
+                    <p class="card-text"><span class="font-weight-bold">Transmission: </span><span id="transmission" >Automatic</span></p>
+                    <p class="card-text"><span class="font-weight-bold">KM Allowance: </span><span id="allowance">3000KM</span></p>
                 </div>
             </div>
             <div class="col px-2 my-auto text-center">
                 <h3>
-                    $<span id="price">500</span> CAD
+                    $<span id="car-price">500</span> CAD
                 </h3>
                 <p><i>per day</i></p>
             </div>
         </div>
         <div class="card-footer bg-white w-100 text-muted">
-            <a class="btn btn-secondary float-right" href="../cars/">Find Cars</a>
+            <a class="btn btn-secondary float-right" href="../cars/" target="_blank">Find Cars</a>
         </div>
     </div>
 </div>
+
+<script>
+    loadCar();
+    document.addEventListener("visibilitychange", function() {
+        loadCar();
+    });
+    
+    function loadCar() {
+        var car = JSON.parse(localStorage.getItem("car"));
+        if (car) {
+            document.getElementById("make").innerHTML = car[0];
+            document.getElementById("model").innerHTML = car[1];
+            document.getElementById("passengers").innerHTML = car[5];
+            document.getElementById("car-type").innerHTML = car[3];
+            document.getElementById("car-year").innerHTML = car[2];
+            document.getElementById("transmission").innerHTML = car[6];
+            document.getElementById("allowance").innerHTML = car[7];
+            document.getElementById("car-price").innerHTML = car[4];   
+            document.getElementById("car-img").innerHTML = car[8];   
+        }
+    }  
+</script>
