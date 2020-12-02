@@ -41,7 +41,7 @@ p{
 }
 
 .button:hover{
-  background:#648698;
+  background:#00cccc;
   color:#fff;
-  border:#648698 2px solid;
+  border:#00cccc 2px solid;
 }
