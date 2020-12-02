@@ -7,7 +7,7 @@ var title = document.title,
 //Header
 
 code =
-    "    <img src=\"EZ_logo_white.png\" style=\"height: 75px\"/>" +
+    "    <img src=\"../../img/EZ_logo_white.png\" style=\"height: 75px\"/>" +
     "    EZPlanner" +
     "    <nav class=\"navbar navbar-expand-lg navbar-light\" >" +
     "        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">" +
@@ -118,13 +118,13 @@ code =
     "                    <h5>Social Media</h5>" +
     "                <ul class=\"list-unstyled\" style=\"font-size: 14px; color: #a0b2bc;\">" +
     "                    <li>" +
-    "                        <img src=\"twitter.png\" style=\"width:25px\" /> @EZplanner" +
+    "                        <img src=\"../../img/twitter.png\" style=\"width:25px\" /> @EZplanner" +
     "                        </li>" +
     "                    <li>" +
-    "                        <img src=\"instagram.png\" style=\"width:25px\" /> ez_planner" +
+    "                        <img src=\"../../img/instagram.png\" style=\"width:25px\" /> ez_planner" +
     "                        </li>" +
     "                    <li>" +
-    "                        <img src=\"facebook.png\" style=\"width:25px\" /> ezPlanner" +
+    "                        <img src=\"../../img/facebook.png\" style=\"width:25px\" /> ezPlanner" +
     "                        </li>" +
     "                </ul>" +
     "            </div>" +
@@ -151,7 +151,7 @@ code =
     "    <!-- Footer Links -->" +
     "        <!-- Copyright -->" +
     "        <div class=\"footer-copyright text-center py-3\">" +
-    "        © 2020 Copyright: EZPlanner.com" +
+    "        Â© 2020 Copyright: EZPlanner.com" +
     "        </div>" +
     "    <!-- Copyright -->";
 

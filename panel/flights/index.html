@@ -25,14 +25,15 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../../css/table-results.css">
-
+    <link rel="stylesheet" href="../../css/cps530.css">
+    
     <title>Book Flights</title>
 
     <script>
         $(function () {
             $("#nav-placeholder").load("../../common/navbar.html");
             $("#search-bar").load("search-bar.html");
-            $("#footer-placeholder").load("/common/footer.html")
+            $("#footer-placeholder").load("../../common/footer.html")
 
             $.getJSON("../../data/flights.json", function (data) {
                 var tbody = '';
@@ -72,7 +73,7 @@
 
 <body class="d-flex flex-column min-vh-100">
     <!-- Nav Bar -->
-    <header id="nav-placeholder"></header>
+    <header></header>
     <!-- End Nav Bar -->
 
     <div class="jumbotron jumbotron-fluid">
@@ -112,9 +113,10 @@
     </div>
 
     <!-- Footer -->
-    <footer>
-    </footer>
-    <script src="script.js"></script>
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="../../js/header-footer.js"></script>
     <!-- Footer -->
 </body>
 

@@ -52,7 +52,7 @@
         "price": 44,
         "transmission": "Automatic",
         "allowance": "1500",
-        "img": "/data/cars/2013_mercedes_benz_b25.jpg"
+        "img": "/data/cars/2011_mercedes_benz_b250.jpg"
     },        
     {
         "make": "SATURN",
@@ -107,7 +107,7 @@
         "price": 44,
         "transmission": "Automatic",
         "allowance": "1500",
-        "img": "/data/cars/2009_merces_benz_ml350.jpg"
+        "img": "/data/cars/2009_mercedes_benz_ml350.jpg"
     },        
     {
         "make": "HUMMER",
@@ -118,6 +118,6 @@
         "price": 66,
         "transmission": "Automatic",
         "allowance": "2000",
-        "img": "/data/cars/2008/hummer_h2.jpg"
+        "img": "/data/cars/2008_hummer_h2.jpg"
     }
 ]
