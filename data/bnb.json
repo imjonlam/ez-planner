@@ -9,7 +9,7 @@
       "contact": "+1 416 597 1400",
       "price": 134,
       "rating": 4,
-      "img": "/data/bnb/intercontinental_toronto_center.jpg"
+      "img": "../../data/bnb/intercontinental_toronto_center.jpg"
     },  
     {
       "location": "Town Inn Suites Toronto",
@@ -21,7 +21,7 @@
       "contact": "+1 416 964 3311",
       "price": 80,
       "rating": 3,
-      "img": "/data/bnb/town_inn_suits.jpg"
+      "img": "../../data/bnb/town_inn_suits.jpg"
     },  
     {
       "location": "Strathcona Hotel Toronto",
@@ -33,7 +33,7 @@
       "contact": "+1 416 363 3321",
       "price": 126,
       "rating": 5,
-      "img": "/data/bnb/strathcona_hotel_toronto.jpg"
+      "img": "../../data/bnb/strathcona_hotel_toronto.jpg"
     },  
     {
       "location": "Le St-Martin Hôtel Particulier Montréal",
@@ -45,7 +45,7 @@
       "contact": "+1 514 843 3000",
       "price": 161,
       "rating": 4,
-      "img": "/data/bnb/le_st_martin.jpg"
+      "img": "../../data/bnb/le_st_martin.jpg"
     },  
     {
       "location": "Hotel Bonaventure Montreal",
@@ -57,7 +57,7 @@
       "contact": "+1 514 878 2332",
       "price": 169,
       "rating": 3,
-      "img": "/data/bnb/hotel_bonaventure_montreal.jpg"
+      "img": "../../data/bnb/hotel_bonaventure_montreal.jpg"
     },
     {
       "location": "Shangri-La Hotel Toronto",
@@ -69,7 +69,7 @@
       "contact": "+1 647 788 8888",
       "price": 472,
       "rating": 4,
-      "img": "/data/bnb/shangri_la.jpg"
+      "img": "../../data/bnb/shangri_la.jpg"
     },   
     {
       "location": "Wyndham Garden Calgary Airport",
@@ -81,7 +81,7 @@
       "contact": "+1 403 516 2266",
       "price": 91,
       "rating": 5,
-      "img": "/data/bnb/wyndham_garden.jpg"
+      "img": "../../data/bnb/wyndham_garden.jpg"
     },   
     {
       "location": "Hotel Arts",
@@ -93,7 +93,7 @@
       "contact": "+1 403 266 4611",
       "price": 165,
       "rating": 3,
-      "img": "/data/bnb/hotel_arts.jpg"
+      "img": "../../data/bnb/hotel_arts.jpg"
     }, 
     {
       "location": "Hotel Le Germain Montreal",
@@ -105,6 +105,6 @@
       "contact": "+1 514 849 2050",
       "price": 262,
       "rating": 3,
-      "img": "/data/bnb/hotel_le_germain.jpg"
+      "img": "../../data/bnb/hotel_le_germain.jpg"
     }
   ]

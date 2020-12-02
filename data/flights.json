@@ -9,7 +9,7 @@
         "duration": "1h 16m",
         "type": "Standard",
         "price": 202,
-        "img": "/data/flights/air_canada.jpg"
+        "img": "../../data/flights/air_canada.jpg"
     },
     {
         "airline": "WestJet",
@@ -21,7 +21,7 @@
         "duration": "1h 32m",
         "type": "Basic",
         "price": 206,
-        "img": "/data/flights/west_jet.jpg"
+        "img": "../../data/flights/west_jet.jpg"
     },
     {
         "airline": "Air Transat",
@@ -33,7 +33,7 @@
         "duration": "1h 16m",
         "type": "Standard",
         "price": 211,
-        "img": "/data/flights/air_transat.jpg"
+        "img": "../../data/flights/air_transat.jpg"
     },    
     {
         "airline": "Air Canada",
@@ -45,7 +45,7 @@
         "duration": "1h 01m",
         "type": "Standard",
         "price": 223,
-        "img": "/data/flights/air_canada.jpg"
+        "img": "../../data/flights/air_canada.jpg"
     },     
     {
         "airline": "WestJet",
@@ -57,7 +57,7 @@
         "duration": "1h 19m",
         "type": "Standard",
         "price": 188,
-        "img": "/data/flights/west_jet.jpg"
+        "img": "../../data/flights/west_jet.jpg"
     },    
     {
         "airline": "Porter Airlines",
@@ -69,7 +69,7 @@
         "duration": "2h 00m",
         "type": "Standard",
         "price": 315,
-        "img": "/data/flights/porter_airlines.jpg"
+        "img": "../../data/flights/porter_airlines.jpg"
     },    
     {
         "airline": "Air Canada",
@@ -81,7 +81,7 @@
         "duration": "1h 48m",
         "type": "Standard",
         "price": 323,
-        "img": "/data/flights/air_canada.jpg"
+        "img": "../../data/flights/air_canada.jpg"
     },    
     {
         "airline": "WestJet",
@@ -93,7 +93,7 @@
         "duration": "2h 15m",
         "type": "Standard",
         "price": 315,
-        "img": "/data/flights/west_jet.jpg"
+        "img": "../../data/flights/west_jet.jpg"
     },    
     {
         "airline": "WestJet",
@@ -105,7 +105,7 @@
         "duration": "4h 09m",
         "type": "Standard",
         "price": 374,
-        "img": "/data/flights/west_jet.jpg"
+        "img": "../../data/flights/west_jet.jpg"
     },  
     {
         "airline": "Air Canada",
@@ -117,7 +117,7 @@
         "duration": "3h 56m",
         "type": "Standard",
         "price": 374,
-        "img": "/data/flights/air_canada.jpg"
+        "img": "../../data/flights/air_canada.jpg"
     },    
     {
         "airline": "Air Canada",
@@ -129,6 +129,6 @@
         "duration": "4h 30m",
         "type": "Standard",
         "price": 649,
-        "img": "/data/flights/air_canada.jpg"
+        "img": "../../data/flights/air_canada.jpg"
     }
 ]
