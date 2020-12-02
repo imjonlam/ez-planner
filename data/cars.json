@@ -8,19 +8,8 @@
         "price": 32,
         "transmission": "Automatic",
         "allowance": "3000",
-        "img": ""
-    },        
-    {
-        "make": "STERLING TRUCK",
-        "model": "A9500",
-        "year": 2010,
-        "type": "truck",
-        "capacity": 4,
-        "price": 42,
-        "transmission": "Manual",
-        "allowance": "3500",
-        "img": ""
-    },        
+        "img": "/data/cars/2005_toyota_camry.jpg"
+    },            
     {
         "make": "NISSAN",
         "model": "ALMERA",
@@ -30,18 +19,18 @@
         "price": 47,
         "transmission": "Automatic",
         "allowance": "3000",
-        "img": ""
+        "img": "/data/cars/2001_nissan_almera.jpg"
     },        
     {
         "make": "HONDA",
         "model": "PILOT",
         "year": 2011,
-        "type": "Sedan",
+        "type": "Suv",
         "capacity": 4,
         "price": 17,
         "transmission": "Automatic",
         "allowance": "3000",
-        "img": ""
+        "img": "/data/cars/2011_honda_pilot.jpg"
     },        
     {
         "make": "LAND ROVER",
@@ -52,7 +41,7 @@
         "price": 44,
         "transmission": "Automatic",
         "allowance": "1000",
-        "img": ""
+        "img": "/data/cars/2011_land_rover_defender.jpg"
     },        
     {
         "make": "MERCEDES-BENZ",
@@ -63,7 +52,7 @@
         "price": 44,
         "transmission": "Automatic",
         "allowance": "1500",
-        "img": ""
+        "img": "/data/cars/2013_mercedes_benz_b25.jpg"
     },        
     {
         "make": "SATURN",
@@ -74,7 +63,7 @@
         "price": 32,
         "transmission": "Automatic",
         "allowance": "3500",
-        "img": ""
+        "img": "/data/cars/2008_saturn_sky.jpg"
     },        
     {
         "make": "ACURA",
@@ -85,7 +74,7 @@
         "price": 32,
         "transmission": "Automatic",
         "allowance": "3000",
-        "img": ""
+        "img": "/data/cars/2014_acura_tl.jpg"
     },        
     {
         "make": "NISSAN",
@@ -96,7 +85,7 @@
         "price": 13,
         "transmission": "3500",
         "allowance": "Automatic",
-        "img": ""
+        "img": "/data/cars/2011_nissan_leaf.jpg"
     },        
     {
         "make": "CHEVROLET",
@@ -107,7 +96,7 @@
         "price": 60,
         "transmission": "Manual",
         "allowance": "1000",
-        "img": ""
+        "img": "/data/cars/2006_z06.jpg"
     },        
     {
         "make": "MERCEDES-BENZ",
@@ -118,7 +107,7 @@
         "price": 44,
         "transmission": "Automatic",
         "allowance": "1500",
-        "img": ""
+        "img": "/data/cars/2009_merces_benz_ml350.jpg"
     },        
     {
         "make": "HUMMER",
@@ -129,6 +118,6 @@
         "price": 66,
         "transmission": "Automatic",
         "allowance": "2000",
-        "img": ""
+        "img": "/data/cars/2008/hummer_h2.jpg"
     }
 ]
