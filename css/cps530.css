@@ -1,19 +1,37 @@
 body {
-    background-color: #f2f2f2;
+    background-color: #F6F3F3;
     font-family: 'prompt', sans-serif;
 }
 
 
 .form-entry {
-    background-color: #f2f2f2;
+    background-color: #F6F3F3;
 }
 
 .form {
-    background-color: #f2f2f2;
+    background-color: #F6F3F3;
     border: 1px solid;
     border-radius: 8px;
     padding: 10px;
     box-shadow: 5px 10px 18px;
+}
+
+.theme-col {
+    background-color: #19B1EE;
+    border-color: #19B1EE;
+}
+
+.theme-col:hover {
+    background-color: #1e99eb;
+    border-color: #1e99eb;
+}
+
+.write-col {
+    color: #19B1EE;
+}
+
+.write-col {
+    color: #1e99eb;
 }
 
 .center-height {
