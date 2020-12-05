@@ -6,8 +6,8 @@ CREATE TABLE IF NOT EXISTS groups (
 
 -- create group members table
 CREATE TABLE IF NOT EXISTS members (
-    group INT,
-    user INT,
+    group VARCHAR(255),
+    user VARCHAR(50),
 
     PRIMARY KEY (group, user),
     FOREIGN KEY (group) REFERENCES groups (group_name) 
@@ -18,15 +18,79 @@ CREATE TABLE IF NOT EXISTS members (
         ON DELETE CASCADE
 );
 
+-- create group flights table
+CREATE TABLE IF NOT EXISTS group_flights (
+    group VARCHAR(255),
+    flight INT,
+
+    PRIMARY KEY (group),
+    FOREIGN KEY (group) REFERENCES groups (group_name) 
+        ON UPDATE CASCADE 
+        ON DELETE CASCADE,
+    FOREIGN KEY (flight) REFERENCES flights (flight_id)
+        ON UPDATE CASCADE 
+        ON DELETE CASCADE
+);
+
+-- create group cars table
+CREATE TABLE IF NOT EXISTS group_cars (
+    group VARCHAR(255),
+    car INT,
+
+    PRIMARY KEY (group),
+    FOREIGN KEY (group) REFERENCES groups (group_name) 
+        ON UPDATE CASCADE 
+        ON DELETE CASCADE,
+    FOREIGN KEY (car) REFERENCES cars (car_id)
+        ON UPDATE CASCADE 
+        ON DELETE CASCADE
+);
+
+-- create group bnb table
+CREATE TABLE IF NOT EXISTS group_bnbs (
+    group VARCHAR(255),
+    bnb VARCHAR(100),
+
+    PRIMARY KEY (group),
+    FOREIGN KEY (group) REFERENCES groups (group_name) 
+        ON UPDATE CASCADE 
+        ON DELETE CASCADE,
+    FOREIGN KEY (bnb) REFERENCES bnbs (location)
+        ON UPDATE CASCADE 
+        ON DELETE CASCADE
+);
+
 -- insert groups into table
 INSERT INTO groups (group_name, description)
 VALUES ('group_name', 'description');
 
--- insert user into members
+-- insert user into a group
 INSERT INTO members (group, user)
-SELECT 'some_group', u.user 
-FROM users u
-WHERE u.user = 'some_user';
+VALUES ('some_group', 'some_user');
+
+-- insert flight into a group
+INSERT INTO group_flights (group, flight)
+VALUES ('some_group', 'some_user');
+
+-- delete flight from group
+DELETE FROM group_flights 
+WHERE group = 'some_group_name';
+
+-- insert car into a group
+INSERT INTO group_cars (group, car)
+VALUES ('some_group', 'some_user');
+
+-- delete car from group
+DELETE FROM group_cars 
+WHERE group = 'some_group_name';
+
+-- insert bnb into a group
+INSERT INTO group_bnbs (group, bnb)
+VALUES ('some_group', 'some_user');
+
+-- delete bnb from group
+DELETE FROM group_bnbs 
+WHERE group = 'some_group_name';
 
 -- select all group records
 SELECT group_name, description
