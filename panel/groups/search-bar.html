@@ -1,0 +1,125 @@
+<!-- Inline Form -->
+<form>
+    <div class="form-row">
+        <div class="col-7">
+            <input type="text" id="filter" onkeyup="filterGroups()" class="form-control" placeholder="Search groups">
+        </div>
+        <div class="col">
+            <button id="joined" type="button" class="form-control btn btn-light active">My groups</button>
+        </div>
+        <div class="col">
+            <button id="available" type="button" class="form-control btn btn-light">Join groups</button>
+        </div>
+        <div class="col">
+            <button id="create" class="btn btn-primary" type="button" data-toggle="modal" data-target="#create-group">Create group</button>
+        </div>
+    </div>
+</form>
+<!-- End Inline Form -->
+
+<!-- Create New Group -->
+<div class="modal fade" id="create-group" data-backdrop="static" data-keyboard="false" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create a New Group</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="group-name" class="col-form-label">Group Name</label> 
+                        <input type="text" class="form-control" id="group-name" name="group-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="group-descr" class="col-form-label">Group Description</label> 
+                        <textarea class="form-control" id="group-descr" name="group-descr"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Create -->
+
+<script>
+    var username = "";
+    $(document).ready(function() {
+        $("#joined").click();
+    });
+
+    function filterGroups() {
+        var input = document.getElementById("filter");
+        var filter = input.value.toUpperCase();
+        var table = document.getElementById("groups-table");
+        var tr = table.getElementsByTagName("tr");
+
+        for (var i = 0; i < tr.length; i++) {
+            var td = tr[i].getElementsByTagName("td")[0];
+
+            if (td) {
+                var colValue = td.textContent || td.innerText;
+
+                if (colValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    $("#joined, #available").click(function() {
+        if (this.id == "joined") {
+            $("#available").removeClass("active");
+            $(this).addClass("active");
+        } else {
+            $("#joined").removeClass("active");
+            $(this).addClass("active");
+        }
+
+        var joined = $("#joined").hasClass("active");
+        var table = document.getElementById("data");
+        var tr = table.getElementsByTagName("tr");
+        var counter = 0;
+        for (var i = 0; i < tr.length; i++) {
+            var td = tr[i].getElementsByTagName("td")[2];
+
+            if (td) {
+                var colValue = td.textContent || td.innerText;
+
+                if ((colValue.toUpperCase().indexOf(username.toUpperCase()) > -1) == joined) {
+                    tr[i].style.display = "";
+                    counter++;
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+
+            var join = tr[i].getElementsByTagName("button")[0];
+            var leave = tr[i].getElementsByTagName("button")[1];
+            if (joined) {
+                $(leave).removeClass("d-none");
+                $(join).addClass("d-none");
+            } else {
+                $(join).removeClass("d-none");
+                $(leave).addClass("d-none");
+            }
+        }
+
+        if (counter == 0) {
+            $("#none").removeClass("d-none");
+        } else {
+            $("#none").addClass("d-none");
+        }
+    });
+    
+     $("#create").click(function() {
+         var groupName = $("#group-name");
+         var description = $("#group-descr");
+     });
+</script>

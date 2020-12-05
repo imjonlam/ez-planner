@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="EN">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Jquery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
     <!-- Bootstrap 4.5.3 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap Date-Picker Plugin -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="../../css/table-results.css">
-    
-    <title>Groups</title>
+    <link rel="stylesheet" type="text/css" href="../../css/groups.css">
     
     <script>
         $(function() {
@@ -29,57 +33,80 @@
             $("#footer-placeholder").load("../../common/footer.html")
 
             $.getJSON("../../data/groups.json", function(data) {
-                var tbody = '';
+                var tbody = "";
                 $.each(data, function(key, value) {
-                    tbody += '<tr>';
-                    tbody += '<td class="col4">' + value.group + '</td>';
-                    tbody += '<td class="col6">' + value.available + '</td>';
-                    tbody += '<td class="col6">' + value.capacity + '</td>';
-                    tbody += '<td class="col6"><button name="save" type="submit" class="btn btn-secondary" value="X">Join</button></td>';
-                    tbody += '</tr>';
+                    tbody += "<tr id='"+ value.group +"' data-href='../customize/index.html'>";
+                    tbody += "<td class='col4'>" + value.group + "</td>";
+                    tbody += "<td class='col6'>" + value.available + "</td>";
+                    tbody += "<td class='col6'>" + value.capacity + "</td>";
+                    tbody += `<td class="col6">
+                                  <button name="join" class="btn btn-primary" onclick="joinGroup(event)">Join</button>
+                                  <button name="leave" class="btn btn-danger" onclick="leaveGroup(event)">Leave</button>
+                              </td>`;
+                    tbody += "</tr>";
                 });
-                $('#data').append(tbody);
+                $("#data").append(tbody);
             });
         });
+        
+        function joinGroup(event) {
+            event.stopPropagation();
+        }        
+        
+        function leaveGroup(event) {
+            event.stopPropagation();
+        }
+        
+        $(document).on("click", "#data tr", function(event) {
+            var redirect = $(this).attr("data-href");
+            window.location.href = redirect + "?group=" + this.id;
+        });
     </script>
+    
+    <title>My groups</title>
 </head>
-
-<body class="d-flex flex-column min-vh-100">
+<body class="">
     <!-- Nav Bar -->
     <header id="nav-placeholder"></header>
-    <!-- End Nav Bar -->    
+    <!-- End Nav Bar -->
     
+    <!-- Header -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Group Members</h1>
-            <p class="lead">Join a group and start planning activities together!</p>
+            <h1 class="display-4">My groups</h1>
+            <p class="lead">Create or Join a group and start planning activities together!</p>
         </div>
     </div>
+    <!-- End Header -->
     
-    <div class="container mt-5">
+    <!-- Main Table -->
+     <div class="container mt-5">
+    
         <!-- Search Bar -->
-        <div id="search-bar" class=''></div>
+        <div id="search-bar" class=""></div>
         <!-- End Search Bar -->
         
         <!-- Table Results -->        
-        <div class="results-table mt-3">
-            <table>
+        <div class="groups-table mt-3">
+            <table id="groups-table">
                 <thead>
-                    <tr>
-                        <th class="col4">Group ID</th>
+                    <tr id="header">
+                        <th class="col4">Group Names</th>
+                        <th class="col6">Description</th>
                         <th class="col6">Members</th>
-                        <th class="col6">Capacity</th>
-                        <th class="col6">Join</th>
+                        <th class="col6">Action</th>
                     </tr>
                 </thead>
                 <tbody id="data"></tbody>
+                <tbody id="none" class="d-none"><td colspan="4" class="text-center w-100">NO AVAILABLE GROUPS</td></tbody>
             </table>
         </div>
         <!-- End Table -->
     </div>
+    <!-- End Main Table -->
     
     <!-- Footer -->
-    <div id="footer-placeholder" class="mt-auto"></div>
+    <!-- <div id="footer-placeholder" class="mt-auto"></div> -->
     <!-- Footer -->
 </body>
 </html>
