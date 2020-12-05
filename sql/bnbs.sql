@@ -26,4 +26,10 @@ VALUES
 ('Hotel Le Germain Montreal','2050 Rue Mansfield','Montreal','QC','H3A 1Y9','Canada','+1 514 849 2050',262,3,'../../data/bnb/hotel_le_germain.jpg');
 
 -- select all bnb records
-SELECT location, address, city, province, postal_code, country, price, rating, img FROM bnbs; 
+SELECT location, address, city, province, postal_code, country, price, rating, img FROM bnbs;
+
+-- select bnb from group
+SELECT location, address, city, province, postal_code, country, price, rating, img
+FROM bnbs, group_bnbs
+WHERE group_name = 'some_group'
+AND location = bnb;

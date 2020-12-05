@@ -30,3 +30,9 @@ VALUES
 
 -- select all flight records
 SELECT airline, class, origin, origin_code, destination, destination_code, price, stops, duration, img FROM flights; 
+
+-- select flight from group
+SELECT airline, class, origin, origin_code, destination, destination_code, price, stops, duration, img
+FROM flights, group_flights
+WHERE group_name = 'some_group'
+AND airline = flight;
