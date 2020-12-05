@@ -8,8 +8,8 @@ CREATE TABLE IF NOT EXISTS flights (
     destination VARCHAR(50) NOT NULL,
     destination_code VARCHAR(3) NOT NULL,
     price INT NOT NULL,
-    stops INT NOT NULL,
-    duration TIME NOT NULL,
+    stops VARCHAR(50) NOT NULL,
+    duration VARCHAR(50) NOT NULL,
     img VARCHAR(255) NOT NULL
 );
 
