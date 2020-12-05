@@ -1,11 +1,20 @@
 <?php
-    include 'connect.php'
-    $conn = connect();
+    session_start();
+
+    $servername = "localhost";
+    $username = "j229lam";
+    $password = "janewth=";
+    $dbname = "j229lam";
+    
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    #$conn = connect();
+
+    $email= $_POST['email'];
 
     # check if user already exists
     $sql = "SELECT email FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $_GET["email"]);
+    $stmt->bind_param("s", $email);
     $stmt->execute();
 
     $result = $stmt->get_result();
@@ -13,21 +22,47 @@
 
     $row_cnt = $result->num_rows;
     if ($row_cnt == 1) {
+        $_SESSION['error'] = 'Account already associated with that email';
+        header("Location: ../panel/forms/login.html");
         exit(1);
     }
-    
+    # Encrypt password
+    $password = $_POST['password'];
+            $options = [
+                'cost' => 12,
+            ];
+    $password = password_hash($password, PASSWORD_BCRYPT, $options);
+    $firstname = $_POST["firstname"];
+    $lastname = $_POST["lastname"];
+    $address = $_POST["address"];
+    $city = $_POST["city"];
+    $province = $_POST["province"];
+    $postalcode = $_POST["postalcode"];
+    $country = $_POST["country"];
+
     # register otherwise
-    $sql = "INSERT INTO users (email, first_name, last_name, password, address, city, province, postal_code, country) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO users (email, first_name, last_name, password, address, city, province, postal_code) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 
-    $password = base64_encode($_GET["password"])
-    $stmt->bind_param("sssssssss", $_GET["email"], $_GET["first_name"], $_GET["last_name"], $password, $_GET["address"], $_GET["city"], $_GET["province"], $_GET["postal_code"], $_GET["country"]);
-
+    $stmt->bind_param("ssssssss", $email, $firstname, $lastname, $password, $address, $city, $province, $postalcode);
+    echo "here";
     if ($stmt->execute()) {
-        echo "success";
+        $_SESSION['email'] = $email;
+        $_SESSION['firstname'] = $firstname;
+        $_SESSION['lastname'] = $lastname;
+        $_SESSION['address'] = $address;
+        $_SESSION['city'] = $city;
+        $_SESSION['province'] = $province;
+        $_SESSION['postalcode'] = $postalcode;
+        #$_SESSION['country'] = $country;
+        header("Location: ../panel/groups/index.html");
+        exit();
     } else {
-        echo "fail";
+        $_SESSION['error'] = 'Error occurred, please refill the form';
+        echo "error";
+        #header("Location: ../panel/forms/registration.html ");
+        exit();
     }
     
-    exit;
+    exit();
 ?>

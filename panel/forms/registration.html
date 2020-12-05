@@ -21,7 +21,7 @@
         <div class="row justify-content-center center-height">
             <h2 class="display-5 text-center">Register Today</h2>
         </div>
-        <form action="../Itinerary/itinerary.html" class="form">
+        <form action="../../php/register.php" class="form" method="post">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="firstname">First Name</label>
@@ -54,26 +54,12 @@
                     <input type="text" name="city" class="form-control" id="city" placeholder="Toronto" required>
                 </div>
                 <div class="form-group col-md-3 col-6">
-                    <label for="province">State</label>
-                    <select class="form-control" name="province" id="province">
-                        <option value="AB">AB</option>
-                        <option value="BC">BC</option>
-                        <option value="MB">MB</option>
-                        <option value="NB">NB</option>
-                        <option value="NL">NL</option>
-                        <option value="NS">NS</option>
-                        <option value="NT">NT</option>
-                        <option value="NU">NU</option>
-                        <option value="ON">ON</option>
-                        <option value="PE">PE</option>
-                        <option value="QC">QC</option>
-                        <option value="SK">SK</option>
-                        <option value="YT">YT</option>
-                    </select>
+                    <label for="province">Province/State</label>
+                    <input type="text" name="province" class="form-control" id="province" placeholder="ON" required>
                 </div>
                 <div class="form-group col-md-3 col-6">
-                    <label for="zip">Postal Code</label>
-                    <input type="text" name="postalcode" class="form-control" id="postalcode" minlength="6"
+                    <label for="postalcode">Postal Code/Zip</label>
+                    <input type="text" name="postalcode" class="form-control" id="postalcode" minlength="5"
                         maxlength="6" placeholder="R4T5Y4" required>
                 </div>
             </div>

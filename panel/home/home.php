@@ -1,55 +1,54 @@
 <?php
-            $servername = "localhost";
-            $username = "auchimar";
-            $password = "yinhayd<";
-            $dbname = "auchimar";
+    session_start();
+    $servername = "localhost";
+    $username = "auchimar";
+    $password = "yinhayd<";
+    $dbname = "auchimar";
 
-            $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $servername = "localhost";
+    $username = "j229lam";
+    $password = "janewth=";
+    $dbname = "j229lam";
 
-            if(isset($_POST['login'])) {
-                echo "Found";
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    $sql = "SELECT email, first_name, last_name, password, address, city, province, postal_code, country FROM users WHERE email = ?";
+    # $sql = "SELECT firstname, lastname, email, password, address, city, province, postal FROM users WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    $stmt->close();
+
+    $row_cnt = $result->num_rows;
+    if ($row_cnt == 1) {
+        while($row = $result->fetch_assoc()) {
+            $dbpassword = $row["password"];
+            if (password_verify($password, $dbpassword)) {
+
+                $_SESSION['email'] = $email;
+                $_SESSION['firstname'] = $row["first_name"];
+                $_SESSION['lastname'] = $row["last_name"];
+                $_SESSION['address'] = $row["address"];
+                $_SESSION['city'] = $row["city"];
+                $_SESSION['province'] = $row["province"];
+                $_SESSION['postalcode'] = $row["postal_code"];
+                $_SESSION['country'] = $row["country"];
+                header("Location: ../groups/index.html");
+                exit();
+            } else {
+                $_SESSION['error'] = 'Email or password not valid';
+                header("Location: ../forms/login.html");
+                }  
             }
+        } else {
+            $_SESSION['error'] = 'Email or password not valid';
+            header("Location: ../forms/login.html");
+        }  
+    exit();
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,300;0,700;0,800;1,100;1,600;1,700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../../css/cps530.css">
-    <script>
-        $(function () {
-          $("#nav-placeholder").load("../../common/navbar.html");
-          $("#footer").load("../../common/footer.html");
-        });
-      </script>
-</head>
-
-<body>
-    <header id="nav-placeholder"></header>
-    <div class="container">
-        
-    </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
