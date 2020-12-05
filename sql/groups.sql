@@ -62,7 +62,10 @@ CREATE TABLE IF NOT EXISTS group_bnbs (
 
 -- insert groups into table
 INSERT INTO groups (group_name, description)
-VALUES ('group_name', 'description');
+VALUES ('Ryerson Trip', 'Planning out graduation trip'),
+VALUES ('Calgary', 'Calgary itinerary'),
+VALUES ('Home Away from Home', 'Tired of stuck being at home? Plan a trip with us!'),
+VALUES ('COVID Hideaway', 'Let''s escape COVID');
 
 -- insert user into a group
 INSERT INTO members (group, user)
