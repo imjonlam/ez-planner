@@ -1,8 +1,8 @@
 <?php
-    include 'connect.php'
+    include '../connect.php'
     $conn = connect();
 
-    $sql = "SELECT location, address, city, province, postal_code, country, price, rating, img FROM bnbs";
+    $sql = "SELECT airline, class, origin, origin_code, destination, destination_code, price, stops, duration, img FROM flights";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result();

@@ -29,3 +29,9 @@ VALUES
 
 -- select all car records
 SELECT make, model, year, type, capacity, allowance, price, transmission, img FROM cars; 
+
+-- select car from group
+SELECT make, model, year, type, capacity, allowance, price, transmission, img
+FROM cars, group_cars
+WHERE group_name = 'some_group'
+AND car_id = car;

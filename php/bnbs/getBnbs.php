@@ -1,8 +1,8 @@
 <?php
-    include 'connect.php'
+    include '../connect.php'
     $conn = connect();
 
-    $sql = "SELECT group_name, description FROM groups";
+    $sql = "SELECT location, address, city, province, postal_code, country, price, rating, img FROM bnbs";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result();

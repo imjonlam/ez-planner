@@ -70,9 +70,14 @@ VALUES
 INSERT INTO group_members (group_name, user)
 VALUES ('some_group', 'some_user');
 
+-- delete user from group
+DELETE FROM group_members 
+WHERE user = 'some_user';
+
 -- insert flight into a group
 INSERT INTO group_flights (group_name, flight)
-VALUES ('some_group', 'some_user');
+VALUES ('some_group', 'some_flight')
+ON DUPLICATE KEY UPDATE flight = VALUES(flight);
 
 -- delete flight from group
 DELETE FROM group_flights 
@@ -80,7 +85,8 @@ WHERE group_name = 'some_group_name';
 
 -- insert car into a group
 INSERT INTO group_cars (group_name, car)
-VALUES ('some_group', 'some_user');
+VALUES ('some_group', 'some_car')
+ON DUPLICATE KEY UPDATE car = VALUES(car);
 
 -- delete car from group
 DELETE FROM group_cars 
@@ -88,7 +94,8 @@ WHERE group_name = 'some_group_name';
 
 -- insert bnb into a group
 INSERT INTO group_bnbs (group_name, bnb)
-VALUES ('some_group', 'some_user');
+VALUES ('some_group', 'some_bnb')
+ON DUPLICATE KEY UPDATE bnb = VALUES(bnb);
 
 -- delete bnb from group
 DELETE FROM group_bnbs 
@@ -100,5 +107,4 @@ SELECT group_name, description FROM groups;
 -- select all members of a particular group
 SELECT g.group_name, g.description, GROUP_CONCAT(m.user) as "members"
 FROM groups g, group_members m
-WHERE g.group_name = m.group_name
-AND g.group_name = 'some_group_name';
+WHERE g.group_name = m.group_name;
