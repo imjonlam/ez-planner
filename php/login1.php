@@ -12,8 +12,8 @@
 
     $row_cnt = $result->num_rows;
     if ($row_cnt == 1) {
-        exit(0);
+        echo "success";
     } else {
-        exit(1);
+        echo "fail";
     }  
 ?>

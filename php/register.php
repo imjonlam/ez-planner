@@ -22,10 +22,12 @@
 
     $password = base64_encode($_GET["password"])
     $stmt->bind_param("sssssssss", $_GET["email"], $_GET["first_name"], $_GET["last_name"], $password, $_GET["address"], $_GET["city"], $_GET["province"], $_GET["postal_code"], $_GET["country"]);
-    $stmt->execute();
 
-    header('Content-type: application/json');
-    echo json_encode($result->fetch_all(MYSQLI_ASSOC));
-
+    if ($stmt->execute()) {
+        echo "success";
+    } else {
+        echo "fail";
+    }
+    
     exit;
 ?>
