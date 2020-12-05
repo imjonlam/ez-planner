@@ -95,8 +95,7 @@ DELETE FROM group_bnbs
 WHERE group_name = 'some_group_name';
 
 -- select all group records
-SELECT group_name, description
-FROM groups;
+SELECT group_name, description FROM groups;
 
 -- select all members of a particular group
 SELECT g.group_name, g.description, GROUP_CONCAT(m.user) as "members"
