@@ -12,4 +12,4 @@
     $stmt->close();
 
     exit;
-<?
+?>

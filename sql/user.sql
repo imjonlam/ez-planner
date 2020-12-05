@@ -16,5 +16,12 @@ INSERT INTO users (email, first_name, last_name, password, address, city, provin
 VALUES ('email', 'first_name', 'last_name', 'password', 'address', 'city', 'province', 'postal_code', 'country');
 
 -- select user by email
-SELECT email, password FROM users
+SELECT email 
+FROM users
 WHERE email = "some_email";
+
+-- user login
+SELECT email
+FROM users
+WHERE email = "some_email"
+AND password = "some_password"
