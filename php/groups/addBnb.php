@@ -1,5 +1,5 @@
 <?php
-    include 'connect.php'
+    include '../connect.php'
     $conn = connect();
 
     $sql = "INSERT INTO group_bnbs (group_name, bnb) VALUES (?, ?) ON DUPLICATE KEY UPDATE bnb = VALUES(bnb)";
