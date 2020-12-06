@@ -22,7 +22,10 @@
 
     <script>
         $(function () {
-            $("#nav-placeholder").load("../../common/navbar.html");
+            $("#nav-placeholder").load("../../common/navbar.html", function() {
+                $("#navCustomize").addClass("nav-current");
+                $("#navCustomize").append("<span class=\"sr-only\">(current)</span>");
+            });
             $("#flight-card").load("../flights/flight-card.html");
             $("#bnb-card").load("../bnb/bnb-card.html");
             $("#car-card").load("../cars/car-card.html");
@@ -64,7 +67,7 @@
     </div>
 
     <!-- Footer -->
-    <!-- <div id="footer-placeholder" class="mt-auto"></div> -->
+    <div id="footer-placeholder" class="mt-auto"></div>
     <!-- Footer -->
 </body>
 
