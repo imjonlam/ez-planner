@@ -18,15 +18,14 @@
     $row_cnt = $result->num_rows;
     if ($row_cnt == 1) {
         $_SESSION['error'] = 'Account already associated with that email';
-        echo "Email exists";
-        #header("Location: ../panel/forms/login.html");
+        header("Location: ../panel/forms/login.html");
         exit(1);
     }
     # Encrypt password
     $password = $_POST['password'];
-            $options = [
-                'cost' => 12,
-            ];
+    $options = [
+            'cost' => 12,
+        ];
     $password = password_hash($password, PASSWORD_BCRYPT, $options);
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
@@ -34,14 +33,14 @@
     $city = $_POST["city"];
     $province = $_POST["province"];
     $postalcode = $_POST["postalcode"];
-    #$country = $_POST["country"];
+    $country = $_POST["country"];
 
     # register otherwise
-    $sql = "INSERT INTO users (email, first_name, last_name, password, address, city, province, postal_code) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO users (email, first_name, last_name, password, address, city, province, postal_code, country) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 
-    $stmt->bind_param("ssssssss", $email, $firstname, $lastname, $password, $address, $city, $province, $postalcode);
-    echo "here";
+    $stmt->bind_param("sssssssss", $email, $firstname, $lastname, $password, $address, $city, $province, $postalcode, $country);
+
     if ($stmt->execute()) {
         $_SESSION['email'] = $email;
         $_SESSION['firstname'] = $firstname;
@@ -50,14 +49,12 @@
         $_SESSION['city'] = $city;
         $_SESSION['province'] = $province;
         $_SESSION['postalcode'] = $postalcode;
-        #$_SESSION['country'] = $country;
-        #header("Location: ../panel/groups/index.html");
-        echo "success";
+        $_SESSION['country'] = $country;
+        header("Location: ../panel/groups/index.html");
         exit();
     } else {
         $_SESSION['error'] = 'Error occurred, please refill the form';
-        echo "error";
-        #header("Location: ../panel/forms/registration.html ");
+        header("Location: ../panel/forms/registration.html ");
         exit();
     }
     

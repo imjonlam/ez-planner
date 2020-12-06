@@ -1,6 +1,13 @@
 <?php
-    include 'connect.php';
     session_start();
+
+    if (isset($_SESSION["loggedin"])) {
+        header("Location: ../groups/index.html");
+        exit();
+    }
+
+    include 'connect.php';
+    
     $conn = connect();
 
     $email = $_POST["email"];
@@ -21,7 +28,7 @@
         while($row = $result->fetch_assoc()) {
             $dbpassword = $row["password"];
             if (password_verify($password, $dbpassword)) {
-
+                $_SESSION['loggedin'] = '1';
                 $_SESSION['email'] = $email;
                 $_SESSION['firstname'] = $row["first_name"];
                 $_SESSION['lastname'] = $row["last_name"];
@@ -30,20 +37,17 @@
                 $_SESSION['province'] = $row["province"];
                 $_SESSION['postalcode'] = $row["postal_code"];
                 $_SESSION['country'] = $row["country"];
-                echo "success";
-                #header("Location: ../groups/index.html");
+                header("Location: ../panel/groups/index.html");
                 exit();
             } else {
                 $_SESSION['error'] = 'Email or password not valid';
-                echo "Invalid password";
-                #header("Location: ../forms/login.html");
+                header("Location: ../panel/forms/login.html");
             } 
             
         }
     } else {
         $_SESSION['error'] = 'Email or password not valid';
-        echo "email not found</br>";
-        #header("Location: ../forms/login.html");
+        header("Location: ../panel/forms/login.html");
     } 
     exit();
 ?>

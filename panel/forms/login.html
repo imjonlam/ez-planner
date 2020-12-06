@@ -40,7 +40,8 @@
                         <input type="password" class="form-control" name="password" placeholder="Password" minlength="8"
                             required><br>
                     </div>
-                    <button type="submit" name="login" class="btn btn-primary btn-block theme-col">Login</button>
+                    <button type="submit" name="login" id="login"
+                        class="btn btn-primary btn-block theme-col">Login</button>
                 </form>
                 <div class="mb-3"></div>
                 <div class="text-center">
@@ -49,6 +50,35 @@
             </div>
         </div>
     </div>
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("login").on('click', function () {
+                var email = $("email").val();
+                var password = $("password").val();
+
+                $.ajax(
+                    {
+                        url: 'login.php',
+                        method: 'POST',
+                        data: {
+                            login: 1,
+                            email: email,
+                            password: password
+                        },
+                        success: function (response) {
+
+                            if (response.indexOf('success') >= 0)
+                                window.location = '../groups/index.html'
+                        },
+                        dataType: 'text'
+                    }
+                );
+            });
+        });
+    </script>
+    -->
 </body>
 
 </html>
