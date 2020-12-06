@@ -50,16 +50,10 @@
 <script>
     var username = null;
     $(document).ready(function() {
-        $.ajax({
-            url:'../../php/usercheck.php',
-            cache:false,
-            success:function(email){
-                if (email) {
-                    username = email;
-                    $("#joined").click();
-                }
-            }
-        });
+        username = getUser();
+        if (username) {
+            $("#joined").click();
+        }
     });
 
     function filterGroups() {
