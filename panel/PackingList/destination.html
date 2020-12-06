@@ -23,14 +23,20 @@
   <title>Select your destination</title>
   <script>
     $(function () {
-      $("#nav-placeholder").load("../../common/navbar.html");
+            $("#nav-placeholder").load("../../common/navbar.html", function() {
+                $("#navPacking").addClass("nav-current");
+                $("#navPacking").append("<span class=\"sr-only\">(current)</span>");
+            });
+            $("#footer-placeholder").load("../../common/footer.html")
     });
   </script>
 </head>
 
 <body>
-  <header id="nav-placeholder">
-  </header>
+    <!-- Nav Bar -->
+    <header id="nav-placeholder"></header>
+    <!-- Nav Bar -->
+  
   <header id="destination">
     <h1>Please select your destination</h1>
     <br>
@@ -40,6 +46,11 @@
     <a href="sAmerica.html" class="button">South America</a>
     <a href="Oceania.html" class="button">Oceania</a>
   </header>
+  
+    <!-- Footer -->
+    <footer id="footer-placeholder"></footer>
+    <!-- Footer -->
+  
 </body>
 
 </html>
