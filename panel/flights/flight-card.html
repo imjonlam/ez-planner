@@ -49,8 +49,9 @@
                 data: {group: group_name},
                 async:false,
                 cache:false,
-                success: function(result) {
-                    if (result.length > 0) {
+                success: function(response) {
+                    if (response.length > 0) {
+                        result = response[0];
                         $("#flight-info").removeClass('d-none');
                         document.getElementById("airline").innerHTML = result["airline"];
                         document.getElementById("from").innerHTML = result["origin"];

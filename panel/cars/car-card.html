@@ -49,8 +49,9 @@
                 data: {group: group_name},
                 async:false,
                 cache:false,
-                success: function(result) {
-                    if (result.length > 0) {
+                success: function(response) {
+                    if (response.length > 0) {
+                        result = response[0];
                         $("#car-info").removeClass('d-none');
                         document.getElementById("make").innerHTML = result["make"];
                         document.getElementById("model").innerHTML = result["model"];
