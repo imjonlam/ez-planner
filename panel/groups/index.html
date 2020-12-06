@@ -89,6 +89,7 @@
                 success: function (response) {
                     if (response['success']) {
                         $(btn).html('Joined');
+                        location.reload();
                     } else {
                         $(btn).html('Failed')
                     }
@@ -112,6 +113,7 @@
                 success: function (response) {
                     if (response['success']) {
                         $(btn).html('Left');
+                        location.reload();
                     } else {
                         $(btn).html('Failed')
                     }
