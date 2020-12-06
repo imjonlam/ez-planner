@@ -34,24 +34,34 @@
             $("#search-bar").load("search-bar.html");
             $("#footer-placeholder").load("../../common/footer.html")
 
-            $.getJSON("../../data/flights.json", function (data) {
-                var tbody = '';
-                $.each(data, function (key, value) {
-                    tbody += '<tr>';
-                    tbody += '<td class="col4">' + value.airline + '</td>';
-                    tbody += '<td class="col6">' + value.from + '</td>';
-                    tbody += '<td class="col6 invisible collapse">' + value.from_abbr + '</td>';
-                    tbody += '<td class="col6">' + value.to + '</td>';
-                    tbody += '<td class="col6 invisible collapse">' + value.to_abbr + '</td>';
-                    tbody += '<td class="col6">' + value.stops + '</td>';
-                    tbody += '<td class="col6">' + value.duration + '</td>';
-                    tbody += '<td class="col6">' + value.type + '</td>';
-                    tbody += '<td class="col6">' + value.price + '</td>';
-                    tbody += '<td class="col6 invisible collapse">' + value.img + '</td>';
-                    tbody += '<td class="col6"><button name="save" class="save-btn btn btn-secondary" onclick="getRow(this)">Save</button></td>';
-                    tbody += '</tr>';
-                });
-                $('#data').append(tbody);
+            $.ajax({
+                type:"GET",
+                url:"../../php/flights/getFlights.php",
+                dataType: 'json',
+                async:false,
+                cache:false,
+                success: function(result){
+                    if (result) {
+                        data = eval (result);
+                        var tbody = '';
+                        $.each(data, function (key, value) {
+                            tbody += '<tr>';
+                            tbody += '<td class="col4">' + value.airline + '</td>';
+                            tbody += '<td class="col6">' + value.origin + '</td>';
+                            tbody += '<td class="col6 invisible collapse">' + value.origin_code + '</td>';
+                            tbody += '<td class="col6">' + value.destination + '</td>';
+                            tbody += '<td class="col6 invisible collapse">' + value.destination_code + '</td>';
+                            tbody += '<td class="col6">' + value.stops + '</td>';
+                            tbody += '<td class="col6">' + value.duration + '</td>';
+                            tbody += '<td class="col6">' + value.class + '</td>';
+                            tbody += '<td class="col6">' + value.price + '</td>';
+                            tbody += '<td class="col6 invisible collapse">' + value.img + '</td>';
+                            tbody += '<td class="col6"><button name="save" class="save-btn btn btn-secondary" onclick="getRow(this)">Save</button></td>';
+                            tbody += '</tr>';
+                        });
+                        $('#data').append(tbody);
+                    }
+                }
             });
         });
 

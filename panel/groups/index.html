@@ -32,20 +32,30 @@
             $("#search-bar").load("search-bar.html");
             $("#footer-placeholder").load("../../common/footer.html")
 
-            $.getJSON("../../data/groups.json", function(data) {
-                var tbody = "";
-                $.each(data, function(key, value) {
-                    tbody += "<tr id='"+ value.group +"' data-href='../customize/index.html'>";
-                    tbody += "<td class='col4'>" + value.group + "</td>";
-                    tbody += "<td class='col6'>" + value.available + "</td>";
-                    tbody += "<td class='col6'>" + value.capacity + "</td>";
-                    tbody += `<td class="col6">
-                                  <button name="join" class="btn btn-primary" onclick="joinGroup(event)">Join</button>
-                                  <button name="leave" class="btn btn-danger" onclick="leaveGroup(event)">Leave</button>
-                              </td>`;
-                    tbody += "</tr>";
-                });
-                $("#data").append(tbody);
+            $.ajax({
+                type:"GET",
+                url:"../../php/groups/getGroups.php",
+                dataType: 'json',
+                async:false,
+                cache:false,
+                success: function(result){
+                    if (result) {
+                        data = eval (result);
+                        var tbody = '';
+                        $.each(data, function (key, value) {
+                            tbody += "<tr id='"+ value.group +"' data-href='../customize/index.html'>";
+                            tbody += "<td class='col4'>" + value.group_name + "</td>";
+                            tbody += "<td class='col6'>" + value.description + "</td>";
+                            tbody += "<td class='col6'>" + value.members + "</td>";
+                            tbody += `<td class="col6">
+                                        <button name="join" class="btn btn-primary" onclick="joinGroup(event)">Join</button>
+                                        <button name="leave" class="btn btn-danger" onclick="leaveGroup(event)">Leave</button>
+                                      </td>`;
+                            tbody += "</tr>";
+                        });
+                        $('#data').append(tbody);
+                    }
+                }
             });
         });
         
