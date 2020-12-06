@@ -134,7 +134,7 @@
 
         available = true;
         $('.group-name').each(function(i, obj) {
-            if (group_name == $(obj).text()) {
+            if (group_name.toUpperCase() == $(obj).text().toUpperCase()) {
                 available = false;
             }
         });
