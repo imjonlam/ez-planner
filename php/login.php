@@ -2,7 +2,7 @@
     session_start();
 
     if (isset($_SESSION["loggedin"])) {
-        header("Location: ../groups/index.html");
+        header("Location: ../panel/groups/index.html");
         exit();
     }
 
