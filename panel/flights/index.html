@@ -30,7 +30,10 @@
 
     <script>
         $(function () {
-            $("#nav-placeholder").load("../../common/navbar.html");
+            $("#nav-placeholder").load("../../common/navbar.html", function() {
+                $("##navbarDropdownMenuLink").addClass("nav-current");
+                $("##navbarDropdownMenuLink").append("<span class=\"sr-only\">(current)</span>");
+            });
             $("#search-bar").load("search-bar.html");
             $("#footer-placeholder").load("../../common/footer.html")
             
@@ -99,7 +102,7 @@
 <body class="d-flex flex-column min-vh-100">
     <!-- Nav Bar -->
     <header id="nav-placeholder"></header>
-    <!-- End Nav Bar -->
+    <!-- Nav Bar -->
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -139,7 +142,7 @@
     </div>
 
     <!-- Footer -->
-    <footer></footer>
+    <footer id="footer-placeholder"></footer>
     <!-- Footer -->
 </body>
 
