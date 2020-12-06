@@ -1,5 +1,5 @@
 <?php
-    include '../connect.php'
+    include '../connect.php';
     $conn = connect();
 
     $sql = "SELECT make, model, year, type, capacity, allowance, price, transmission, img FROM cars, group_cars WHERE group_name = ? AND car_id = car";

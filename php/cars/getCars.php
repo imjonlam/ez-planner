@@ -1,5 +1,5 @@
 <?php
-    include '../connect.php'
+    include '../connect.php';
     $conn = connect();
 
     $sql = "SELECT airline, class, origin, origin_code, destination, destination_code, price, stops, duration, img FROM flights";

@@ -1,5 +1,5 @@
 <?php
-    include '../connect.php'
+    include '../connect.php';
     $conn = connect();
 
     $sql = "SELECT g.group_name, g.description, GROUP_CONCAT(m.user) as 'members' FROM groups g, group_members m WHERE g.group_name = m.group_name";

@@ -1,5 +1,5 @@
 <?php
-    include '../connect.php'
+    include '../connect.php';
     $conn = connect();
 
     $sql = "DELETE FROM group_members WHERE user = ?";

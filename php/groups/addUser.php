@@ -1,5 +1,5 @@
 <?php
-    include '../connect.php'
+    include '../connect.php';
     $conn = connect();
 
     $sql = "INSERT INTO group_members (group_name, user) VALUES (?, ?)";
