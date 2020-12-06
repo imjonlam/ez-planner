@@ -48,8 +48,17 @@
 <!-- End Create -->
 
 <script>
-    var username = "";
     $(document).ready(function() {
+        $.ajax({
+            url:'/response.php',
+            cache:false,
+            success:function(email){
+                if (email) {
+                    var username = email
+                }
+            }
+        });
+        
         $("#joined").click();
     });
 
