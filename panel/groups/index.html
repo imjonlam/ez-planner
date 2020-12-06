@@ -29,7 +29,7 @@
     <script>
         $(function() {
             $.ajax({
-                url:'/response.php',
+                url:'../../php/usercheck.php',
                 cache:false,
                 success:function(email){
                     if (email) {
@@ -56,7 +56,10 @@
                             tbody += "<tr id='"+ value.group +"' data-href='../customize/index.html'>";
                             tbody += "<td class='group-name col4'>" + value.group_name + "</td>";
                             tbody += "<td class='col6'>" + value.description + "</td>";
-                            tbody += "<td class='col6'>" + value.members + "</td>";
+
+                            var members = value.members == null ? "None" : value.members;
+                            tbody += "<td class='col6'>" + members + "</td>";
+
                             tbody += `<td class="col6">
                                         <button name="join" class="btn btn-primary" onclick="joinGroup(event, this.id)">Join</button>
                                         <button name="leave" class="btn btn-danger" onclick="leaveGroup(event, this.id)">Leave</button>

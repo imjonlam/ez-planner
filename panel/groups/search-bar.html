@@ -50,7 +50,7 @@
 <script>
     $(document).ready(function() {
         $.ajax({
-            url:'/response.php',
+            url:'../../php/usercheck.php',
             cache:false,
             success:function(email){
                 if (email) {
@@ -136,7 +136,6 @@
         $('.group-name').each(function(i, obj) {
             if (group_name == $(obj).text) {
                 available = false;
-                break;
             }
         });
         
