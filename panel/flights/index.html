@@ -31,8 +31,9 @@
     <script>
         $(function () {
             $("#nav-placeholder").load("../../common/navbar.html", function() {
-                $("##navbarDropdownMenuLink").addClass("nav-current");
-                $("##navbarDropdownMenuLink").append("<span class=\"sr-only\">(current)</span>");
+                $("#navbarDropdownMenuLink").addClass("nav-current");
+                $("#navbarDropdownMenuLink").append("<span class=\"sr-only\">(current)</span>");
+                $("#navbarDropdownMenuLink").parent().addClass("active");
             });
             $("#search-bar").load("search-bar.html");
             $("#footer-placeholder").load("../../common/footer.html")
