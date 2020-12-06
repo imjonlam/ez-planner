@@ -37,7 +37,7 @@
             $.ajax({
                 type:"GET",
                 url:"../../php/flights/getFlights.php",
-                dataType: 'json',
+                dataType: "json",
                 async:false,
                 cache:false,
                 success: function(result){
@@ -46,6 +46,7 @@
                         var tbody = '';
                         $.each(data, function (key, value) {
                             tbody += '<tr>';
+                            tbody += '<td class="col6 invisible collapse">' + value.flight_id + '</td>';
                             tbody += '<td class="col4">' + value.airline + '</td>';
                             tbody += '<td class="col6">' + value.origin + '</td>';
                             tbody += '<td class="col6 invisible collapse">' + value.origin_code + '</td>';
@@ -56,26 +57,41 @@
                             tbody += '<td class="col6">' + value.class + '</td>';
                             tbody += '<td class="col6">' + value.price + '</td>';
                             tbody += '<td class="col6 invisible collapse">' + value.img + '</td>';
-                            tbody += '<td class="col6"><button name="save" class="save-btn btn btn-secondary" onclick="getRow(this)">Save</button></td>';
+                            tbody += '<td class="col6"><button name="save" class="save-btn btn btn-secondary" onclick="chooseRow(this)">Save</button></td>';
                             tbody += '</tr>';
                         });
-                        $('#data').append(tbody);
+                        $("#data").append(tbody);
                     }
                 }
             });
         });
 
-        function getRow(btn) {
-            var arr = Array();
-            var $tds = $(btn).closest("tr").find("td");
-            $.each($tds, function () {
-                if (!['Save', 'Join'].includes($(this).text())) {
-                    arr.push($(this).text());
-                }
-            });
+        function chooseRow(btn) {
+            var td = $(btn).closest("tr").find("td")[0];
+            var flight_id = $(td).text();
 
-            localStorage.setItem("flight", JSON.stringify(arr));
-            window.close();
+            var searchParams = new URLSearchParams(window.location.search)
+            if (searchParams.has("group")) {
+                $(btn).html("Saving");
+                var group_name = searchParams.get("group");
+
+                $.ajax({
+                    type:"POST",
+                    url:"../../php/groups/addFlight.php",
+                    dataType: "json",
+                    data: {group: group_name, flight: flight_id},
+                    async:false,
+                    cache:false,
+                    success: function(response){
+                        if (response['success']) {
+                            $(btn).html('Saved');
+                            window.close();
+                        } else {
+                            $(btn).html('Failed')
+                        }
+                    }
+                });
+            }
         }
     </script>
 </head>
@@ -102,6 +118,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th class="col6 d-none">Flight ID</th>
                         <th class="col4">Airline</th>
                         <th class="col6">From</th>
                         <th class="col6 d-none">From-Abbr</th>

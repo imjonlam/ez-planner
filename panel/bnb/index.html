@@ -78,24 +78,39 @@
                     tbody += '<td class="col6">' + value.price + '</td>';
                     tbody += '<td class="col6 invisible collapse">' + value.rating + '</td>';
                     tbody += '<td class="col6 invisible collapse">' + value.img + '</td>';
-                    tbody += '<td class="col6"><button name="save" class="save-btn btn btn-secondary" onclick="getRow(this)">Save</button></td>';
+                    tbody += '<td class="col6"><button name="save" class="save-btn btn btn-secondary" onclick="chooseRow(this)">Save</button></td>';
                     tbody += '</tr>';
                 });
                 $('#data').append(tbody);
             });
         });
 
-        function getRow(btn) {
-            var arr = Array();
-            var $tds = $(btn).closest("tr").find("td");
-            $.each($tds, function () {
-                if (!['Save', 'Join'].includes($(this).text())) {
-                    arr.push($(this).text());
-                }
-            });
+        function chooseRow(btn) {
+            var td = $(btn).closest("tr").find("td")[0];
+            var loc = $(td).text();
 
-            localStorage.setItem("bnb", JSON.stringify(arr));
-            window.close();
+            var searchParams = new URLSearchParams(window.location.search)
+            if (searchParams.has("group")) {
+                $(btn).html("Saving");
+                var group_name = searchParams.get("group");
+
+                $.ajax({
+                    type:"POST",
+                    url:"../../php/groups/addBnb.php",
+                    dataType: "json",
+                    data: {group: group_name, bnb: loc},
+                    async:false,
+                    cache:false,
+                    success: function(response){
+                        if (response['success']) {
+                            $(btn).html('Saved');
+                            window.close();
+                        } else {
+                            $(btn).html('Failed')
+                        }
+                    }
+                });
+            }
         }
     </script>
 </head>
