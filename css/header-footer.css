@@ -14,8 +14,13 @@ nav {
     font-size: 16px;
 }
 
+.nav-current {
+    border-radius: 10px;
+    background-color: #a0b2bc;
+}
+
     nav:hover > div > ul > li > a.nav-current {
-        background-color: #648698;
+        background-color: transparent;
     }
 
 .navbar-light {
@@ -37,13 +42,8 @@ nav {
     }
 
         .nav-item:hover > a.nav-current {
-            background-color: #a0b2bc;
+            background-color: transparent;
         }
-
-.nav-current {
-    border-radius: 10px;
-    background-color: #a0b2bc;
-}
 
 .dropdown-menu {
     background-color: #a0b2bc;
