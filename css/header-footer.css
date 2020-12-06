@@ -55,6 +55,13 @@ nav {
     background-color: #648698;
 }
 
+@media only screen and (max-width: 991px) {
+    nav {
+        margin-top: 5px;
+        background-color: #536B7B;
+    }
+}
+
 /*Footer CSS*/
 footer {
     background-color: #648698;
