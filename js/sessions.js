@@ -9,7 +9,7 @@ function getUser() {
                 return email;
             }
         }
-    })
+    });
 }
 
 function getGroup() {
@@ -21,7 +21,7 @@ function getGroup() {
                 return group_name;
             }
         }
-    })
+    });
 }
 
 function setGroup(group_name) {
@@ -35,5 +35,5 @@ function setGroup(group_name) {
                 return response;
             }
         }
-    })
+    });
 }

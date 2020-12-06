@@ -25,15 +25,20 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../../css/groups.css">
-
-    <!-- CUSTOM -->
-    <script type="text/javascript" src="../../js/sessions.js"></script>
     
     <script>
         var username = "";
 
         $(function() {
-            username = getUser();
+            $.ajax({
+                url:'../../php/usercheck.php',
+                cache:false,
+                success:function(email){
+                if (email) {
+                    username = email;
+                    }
+                }
+            });
 
             $("#nav-placeholder").load("../../common/navbar.html");
             $("#search-bar").load("search-bar.html");
