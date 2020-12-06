@@ -48,18 +48,18 @@
 <!-- End Create -->
 
 <script>
+    var username = null;
     $(document).ready(function() {
         $.ajax({
             url:'../../php/usercheck.php',
             cache:false,
             success:function(email){
                 if (email) {
-                    var username = email
+                    username = email;
+                    $("#joined").click();
                 }
             }
         });
-        
-        $("#joined").click();
     });
 
     function filterGroups() {

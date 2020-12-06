@@ -27,13 +27,14 @@
     <link rel="stylesheet" type="text/css" href="../../css/groups.css">
     
     <script>
+        var username = null;
         $(function() {
             $.ajax({
                 url:'../../php/usercheck.php',
                 cache:false,
                 success:function(email){
                     if (email) {
-                        var username = email
+                        username = email;
                     }
                 }
             });
