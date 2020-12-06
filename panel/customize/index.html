@@ -25,6 +25,7 @@
             $("#nav-placeholder").load("../../common/navbar.html", function() {
                 $("#navCustomize").addClass("nav-current");
                 $("#navCustomize").append("<span class=\"sr-only\">(current)</span>");
+                $("#navCustomize").parent().addClass("active");
             });
             $("#flight-card").load("../flights/flight-card.html");
             $("#bnb-card").load("../bnb/bnb-card.html");
