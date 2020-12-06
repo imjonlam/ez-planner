@@ -41,7 +41,7 @@
                 dataType: 'json',
                 async:false,
                 cache:false,
-                success: function(result){
+                success: function(result) {
                     if (result) {
                         data = eval (result);
                         var tbody = '';
@@ -82,7 +82,7 @@
                     data: {group: group_name, car: car_id},
                     async:false,
                     cache:false,
-                    success: function(response){
+                    success: function(response) {
                         if (response['success']) {
                             $(btn).html('Saved');
                             window.close();

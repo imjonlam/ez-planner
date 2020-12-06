@@ -39,17 +39,30 @@
     });
     
     function loadCar() {
-        var car = JSON.parse(localStorage.getItem("car"));
-        if (car) {
-            document.getElementById("make").innerHTML = car[0];
-            document.getElementById("model").innerHTML = car[1];
-            document.getElementById("passengers").innerHTML = car[5];
-            document.getElementById("car-type").innerHTML = car[3];
-            document.getElementById("car-year").innerHTML = car[2];
-            document.getElementById("transmission").innerHTML = car[6];
-            document.getElementById("allowance").innerHTML = car[7];
-            document.getElementById("car-price").innerHTML = car[4];   
-            document.getElementById("car-img").src = car[8];   
+        var searchParams = new URLSearchParams(window.location.search)
+        if (searchParams.has("group")) {
+            var group_name = searchParams.get("group");
+            $.ajax({
+                type:"GET",
+                url:"../../php/groups/getCar.php",
+                dataType: "json",
+                data: {group: group_name},
+                async:false,
+                cache:false,
+                success: function(result) {
+                    if (result) {
+                        document.getElementById("make").innerHTML = result["make"];
+                        document.getElementById("model").innerHTML = result["model"];
+                        document.getElementById("passengers").innerHTML = result["capacity"];
+                        document.getElementById("car-type").innerHTML = result["type"];
+                        document.getElementById("car-year").innerHTML = result["year"];
+                        document.getElementById("transmission").innerHTML = result["transmission"];
+                        document.getElementById("allowance").innerHTML = result["allowance"];
+                        document.getElementById("car-price").innerHTML = result["price"];   
+                        document.getElementById("car-img").src = result["img"];    
+                    }
+                }
+            });
         }
-    }  
+    }
 </script>

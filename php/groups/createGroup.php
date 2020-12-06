@@ -4,7 +4,7 @@
 
     $sql = "INSERT INTO groups (group_name, description) VALUES (?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $_GET["group"],  $_GET["description"]);
+    $stmt->bind_param("ss", $_POST["group"],  $_POST["description"]);
 
     $response = array();
     if ($stmt->execute()) {

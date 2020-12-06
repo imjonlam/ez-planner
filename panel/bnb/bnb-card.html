@@ -36,20 +36,62 @@
     document.addEventListener("visibilitychange", function() {
         loadBNB();
     });
-    
+
     function loadBNB() {
-        var bnb = JSON.parse(localStorage.getItem("bnb"));
-        if (bnb) {
-            document.getElementById("location").innerHTML = bnb[0];
-            document.getElementById("address").innerHTML = bnb[1];
-            document.getElementById("city").innerHTML = bnb[2];
-            document.getElementById("province").innerHTML = bnb[3];
-            document.getElementById("postal-code").innerHTML = bnb[4];
-            document.getElementById("country").innerHTML = bnb[5];
-            document.getElementById("cantact").innerHTML = bnb[6];
-            document.getElementById("bnb-price").innerHTML = bnb[7];   
-            document.getElementById("rating").innerHTML = '&#9733'.repeat(bnb[8]);   
-            document.getElementById("bnb-img").src = bnb[9];   
+        var searchParams = new URLSearchParams(window.location.search)
+        if (searchParams.has("group")) {
+            var group_name = searchParams.get("group");
+            $.ajax({
+                type:"GET",
+                url:"../../php/groups/getBnb.php",
+                dataType: "json",
+                data: {group: group_name},
+                async:false,
+                cache:false,
+                success: function(result) {
+                    if (result) {
+                        document.getElementById("location").innerHTML = result["location"];
+                        document.getElementById("address").innerHTML = result["address"];
+                        document.getElementById("city").innerHTML = result["city"];
+                        document.getElementById("province").innerHTML = result["province"];
+                        document.getElementById("postal-code").innerHTML = result["postal_code"];
+                        document.getElementById("country").innerHTML = result["country"];
+                        document.getElementById("cantact").innerHTML = result["contact"];
+                        document.getElementById("bnb-price").innerHTML = result["price"];   
+                        document.getElementById("rating").innerHTML = '&#9733'.repeat(result["rating"]);   
+                        document.getElementById("bnb-img").src = result["img"];   
+                    }
+                }
+            });
         }
-    }  
+    }
 </script>
+
+
+function chooseRow(btn) {
+    var td = $(btn).closest("tr").find("td")[0];
+    var loc = $(td).text();
+
+    var searchParams = new URLSearchParams(window.location.search)
+    if (searchParams.has("group")) {
+        $(btn).html("Saving");
+        var group_name = searchParams.get("group");
+
+        $.ajax({
+            type:"POST",
+            url:"../../php/groups/addBnb.php",
+            dataType: "json",
+            data: {group: group_name, bnb: loc},
+            async:false,
+            cache:false,
+            success: function(response){
+                if (response['success']) {
+                    $(btn).html('Saved');
+                    window.close();
+                } else {
+                    $(btn).html('Failed')
+                }
+            }
+        });
+    }
+}

@@ -4,7 +4,7 @@
 
     $sql = "DELETE FROM group_members WHERE user = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $_GET["email"]);
+    $stmt->bind_param("s", $_POST["email"]);
 
     $response = array();
     if ($stmt->execute()) {
