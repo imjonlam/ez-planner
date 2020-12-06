@@ -1,13 +1,8 @@
 <?php
     session_start();
-
-    $servername = "localhost";
-    $username = "j229lam";
-    $password = "janewth=";
-    $dbname = "j229lam";
+    include 'connect.php';
     
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-    #$conn = connect();
+    $conn = connect();
 
     $email= $_POST['email'];
 
@@ -23,7 +18,8 @@
     $row_cnt = $result->num_rows;
     if ($row_cnt == 1) {
         $_SESSION['error'] = 'Account already associated with that email';
-        header("Location: ../panel/forms/login.html");
+        echo "Email exists";
+        #header("Location: ../panel/forms/login.html");
         exit(1);
     }
     # Encrypt password
@@ -38,7 +34,7 @@
     $city = $_POST["city"];
     $province = $_POST["province"];
     $postalcode = $_POST["postalcode"];
-    $country = $_POST["country"];
+    #$country = $_POST["country"];
 
     # register otherwise
     $sql = "INSERT INTO users (email, first_name, last_name, password, address, city, province, postal_code) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -55,7 +51,8 @@
         $_SESSION['province'] = $province;
         $_SESSION['postalcode'] = $postalcode;
         #$_SESSION['country'] = $country;
-        header("Location: ../panel/groups/index.html");
+        #header("Location: ../panel/groups/index.html");
+        echo "success";
         exit();
     } else {
         $_SESSION['error'] = 'Error occurred, please refill the form';

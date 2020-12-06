@@ -2,7 +2,7 @@
     include 'connect.php';
     session_start();
     $conn = connect();
-    /*
+
     $email = $_POST["email"];
     $password = $_POST["password"];
     
@@ -30,15 +30,20 @@
                 $_SESSION['province'] = $row["province"];
                 $_SESSION['postalcode'] = $row["postal_code"];
                 $_SESSION['country'] = $row["country"];
-                header("Location: ../groups/index.html");
+                echo "success";
+                #header("Location: ../groups/index.html");
                 exit();
             } else {
                 $_SESSION['error'] = 'Email or password not valid';
-                header("Location: ../forms/login.html");
-            }  
+                echo "Invalid password";
+                #header("Location: ../forms/login.html");
+            } 
+            
+        }
     } else {
         $_SESSION['error'] = 'Email or password not valid';
-        header("Location: ../forms/login.html");
+        echo "email not found</br>";
+        #header("Location: ../forms/login.html");
     } 
-    exit();*/
+    exit();
 ?>
