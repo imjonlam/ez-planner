@@ -10,7 +10,7 @@
     if ($stmt->execute()) {
         $response["success"] = "success";
     } else {
-        $response["error"] = "fail"
+        $response["error"] = "fail";
     }
 
     exit(json_encode($response));
