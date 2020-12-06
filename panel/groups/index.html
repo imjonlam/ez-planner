@@ -27,36 +27,90 @@
     <link rel="stylesheet" type="text/css" href="../../css/groups.css">
     
     <script>
+        username= "";
+
         $(function() {
             $("#nav-placeholder").load("../../common/navbar.html");
             $("#search-bar").load("search-bar.html");
             $("#footer-placeholder").load("../../common/footer.html")
 
-            $.getJSON("../../data/groups.json", function(data) {
-                var tbody = "";
-                $.each(data, function(key, value) {
-                    tbody += "<tr id='"+ value.group +"' data-href='../customize/index.html'>";
-                    tbody += "<td class='col4'>" + value.group + "</td>";
-                    tbody += "<td class='col6'>" + value.available + "</td>";
-                    tbody += "<td class='col6'>" + value.capacity + "</td>";
-                    tbody += `<td class="col6">
-                                  <button name="join" class="btn btn-primary" onclick="joinGroup(event)">Join</button>
-                                  <button name="leave" class="btn btn-danger" onclick="leaveGroup(event)">Leave</button>
-                              </td>`;
-                    tbody += "</tr>";
-                });
-                $("#data").append(tbody);
+            $.ajax({
+                type:"GET",
+                url:"../../php/groups/getGroups.php",
+                dataType: 'json',
+                async:false,
+                cache:false,
+                success: function(result) {
+                    if (result) {
+                        data = eval (result);
+                        var tbody = '';
+                        $.each(data, function (key, value) {
+                            tbody += "<tr id='"+ value.group +"' data-href='../customize/index.html'>";
+                            tbody += "<td class='group-name col4'>" + value.group_name + "</td>";
+                            tbody += "<td class='col6'>" + value.description + "</td>";
+                            tbody += "<td class='col6'>" + value.members + "</td>";
+                            tbody += `<td class="col6">
+                                        <button name="join" class="btn btn-primary" onclick="joinGroup(event, this.id)">Join</button>
+                                        <button name="leave" class="btn btn-danger" onclick="leaveGroup(event, this.id)">Leave</button>
+                                      </td>`;
+                            tbody += "</tr>";
+                        });
+                        $('#data').append(tbody);
+                    }
+                }
             });
         });
         
-        function joinGroup(event) {
+        function joinGroup(event, btn) {
             event.stopPropagation();
+
+            var td = $(btn).closest("tr").find("td")[0];
+            var group_name = $(td).text();
+            $(btn).html("Joining");
+
+            $.ajax({
+                type:"POST",
+                url:"../../php/groups/addUser.php",
+                dataType: "json",
+                data: {group: group_name, email: username},
+                async:false,
+                cache:false,
+                success: function(response) {
+                    if (response['success']) {
+                        $(btn).html('Joined');
+                        $("#joined").click();
+                    } else {
+                        $(btn).html('Failed')
+                    }
+                }
+            });
         }        
         
-        function leaveGroup(event) {
+        function leaveGroup(event, btn) {
             event.stopPropagation();
-        }
-        
+
+            var td = $(btn).closest("tr").find("td")[0];
+            var group_name = $(td).text();
+            $(btn).html("Leaving");
+
+            $.ajax({
+                type:"POST",
+                url:"../../php/groups/deleteUser.php",
+                dataType: "json",
+                data: {group: group_name, email: username},
+                async:false,
+                cache:false,
+                success: function(response) {
+                    if (response['success']) {
+                        $(btn).html('Left');
+                        $("#joined").click();
+                    } else {
+                        $(btn).html('Failed')
+                    }
+                }
+            });
+        }    
+
         $(document).on("click", "#data tr", function(event) {
             var redirect = $(this).attr("data-href");
             window.location.href = redirect + "?group=" + this.id;

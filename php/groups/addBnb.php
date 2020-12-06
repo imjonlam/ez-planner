@@ -1,16 +1,17 @@
 <?php
-    include '../connect.php'
+    include '../connect.php';
     $conn = connect();
 
     $sql = "INSERT INTO group_bnbs (group_name, bnb) VALUES (?, ?) ON DUPLICATE KEY UPDATE bnb = VALUES(bnb)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $_GET["group"],  $_GET["bnb"]);
+    $stmt->bind_param("ss", $_POST["group"],  $_POST["bnb"]);
 
+    $response = array();
     if ($stmt->execute()) {
-        echo "success";
+        $response["success"] = "success";
     } else {
-        echo "fail";
+        $response["error"] = "fail"
     }
 
-    exit;
+    exit(json_encode($response));
 ?>

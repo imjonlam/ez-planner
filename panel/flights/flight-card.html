@@ -4,7 +4,7 @@
             <div class="col-auto">
                 <img src="//placehold.it/300" id="flight-img" class="img-fluid pt-5" width="300" height="300" alt="">
             </div>
-            <div id=class="col-5">
+            <div class="col-5">
                 <div class="card-block px-2 pt-5 pl-4">
                     <h4 class="card-title">
                         <span id="from">Calgary</span>
@@ -48,18 +48,31 @@
     });
     
     function loadFlight() {
-        var flight = JSON.parse(localStorage.getItem("flight"));
-        if (flight) {
-            document.getElementById("airline").innerHTML = flight[0];
-            document.getElementById("from").innerHTML = flight[1];
-            document.getElementById("from-abbr").innerHTML = flight[2];
-            document.getElementById("to").innerHTML = flight[3];
-            document.getElementById("to-abbr").innerHTML = flight[4];
-            document.getElementById("stops").innerHTML = flight[5];
-            document.getElementById("duration").innerHTML = flight[6];
-            document.getElementById("class").innerHTML = flight[7];
-            document.getElementById("flight-price").innerHTML = flight[8];   
-            document.getElementById("flight-img").src = flight[9];   
+        var searchParams = new URLSearchParams(window.location.search)
+        if (searchParams.has("group")) {
+            var group_name = searchParams.get("group");
+            $.ajax({
+                type:"GET",
+                url:"../../php/groups/getFlight.php",
+                dataType: "json",
+                data: {group: group_name},
+                async:false,
+                cache:false,
+                success: function(result) {
+                    if (result) {
+                        document.getElementById("airline").innerHTML = result["airline"];
+                        document.getElementById("from").innerHTML = result["origin"];
+                        document.getElementById("from-abbr").innerHTML = result["origin_code"];
+                        document.getElementById("to").innerHTML = result["destination"];
+                        document.getElementById("to-abbr").innerHTML = result["destination_code"];
+                        document.getElementById("stops").innerHTML = result["stops"];
+                        document.getElementById("duration").innerHTML = result["duration"];
+                        document.getElementById("class").innerHTML = result["class"];
+                        document.getElementById("flight-price").innerHTML = result["price"];   
+                        document.getElementById("flight-img").src = result["img"];   
+                    }
+                }
+            });
         }
-    }  
+    }
 </script>

@@ -1,16 +1,17 @@
 <?php
-    include '../connect.php'
+    include '../connect.php';
     $conn = connect();
 
-    $sql = "DELETE FROM group_members WHERE user = ?";
+    $sql = "DELETE FROM group_members WHERE group = ? AND user = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $_GET["email"]);
+    $stmt->bind_param("ss", $_POST["group"],  $_POST["email"]);
 
+    $response = array();
     if ($stmt->execute()) {
-        echo "success";
+        $response["success"] = "success";
     } else {
-        echo "fail";
+        $response["error"] = "fail"
     }
 
-    exit;
+    exit(json_encode($response));
 ?>

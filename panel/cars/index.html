@@ -35,38 +35,63 @@
             $("#search-bar").load("search-bar.html");
             $("#footer-placeholder").load("../../common/footer.html")
 
-            $.getJSON("../../data/cars.json", function (data) {
-                var tbody = '';
-                $.each(data, function (key, value) {
-                    tbody += '<tr>';
-                    tbody += '<td class="col4">' + value.make + '</td>';
-                    tbody += '<td class="col6">' + value.model + '</td>';
-                    tbody += '<td class="col6">' + value.year + '</td>';
-                    tbody += '<td class="col6">' + value.type + '</td>';
-                    tbody += '<td class="col6">' + value.price + '</td>';
-                    tbody += '<td class="col6">' + value.capacity + '</td>';
-                    tbody += '<td class="col6"><button name="save" class="save-btn btn btn-secondary" onclick="getRow(this)">Save</button></td>';
-                    tbody += '<td class="col6 invisible collapse ">' + value.transmission + '</td>';
-                    tbody += '<td class="col6 invisible collapse ">' + value.allowance + '</td>';
-                    tbody += '<td class="col6 invisible collapse ">' + value.img + '</td>';
-                    tbody += '</tr>';
-                });
-                $('#data').append(tbody);
+            $.ajax({
+                type:"GET",
+                url:"../../php/cars/getCars.php",
+                dataType: 'json',
+                async:false,
+                cache:false,
+                success: function(result) {
+                    if (result) {
+                        data = eval (result);
+                        var tbody = '';
+                        $.each(data, function (key, value) {
+                            tbody += '<tr>';
+                            tbody += '<td class="col6 invisible collapse ">' + value.car_id + '</td>';
+                            tbody += '<td class="col4">' + value.make + '</td>';
+                            tbody += '<td class="col6">' + value.model + '</td>';
+                            tbody += '<td class="col6">' + value.year + '</td>';
+                            tbody += '<td class="col6">' + value.type + '</td>';
+                            tbody += '<td class="col6">' + value.price + '</td>';
+                            tbody += '<td class="col6">' + value.capacity + '</td>';
+                            tbody += '<td class="col6"><button name="save" class="save-btn btn btn-secondary" onclick="chooseRow(this)">Save</button></td>';
+                            tbody += '<td class="col6 invisible collapse ">' + value.transmission + '</td>';
+                            tbody += '<td class="col6 invisible collapse ">' + value.allowance + '</td>';
+                            tbody += '<td class="col6 invisible collapse ">' + value.img + '</td>';
+                            tbody += '</tr>';
+                        });
+                        $('#data').append(tbody);
+                    }
+                }
             });
         });
 
-        function getRow(btn) {
-            var arr = Array();
-            var $tds = $(btn).closest("tr").find("td");
-            $.each($tds, function () {
-                if (!['Save', 'Join'].includes($(this).text())) {
-                    arr.push($(this).text());
-                }
-            });
+        function chooseRow(btn) {
+            var td = $(btn).closest("tr").find("td")[0];
+            var car_id = $(td).text();
 
-            localStorage.setItem("car", JSON.stringify(arr));
-            var car = JSON.parse(localStorage.getItem("car"));
-            window.close();
+            var searchParams = new URLSearchParams(window.location.search)
+            if (searchParams.has("group")) {
+                $(btn).html("Saving");
+                var group_name = searchParams.get("group");
+
+                $.ajax({
+                    type:"POST",
+                    url:"../../php/groups/addCar.php",
+                    dataType: "json",
+                    data: {group: group_name, car: car_id},
+                    async:false,
+                    cache:false,
+                    success: function(response) {
+                        if (response['success']) {
+                            $(btn).html('Saved');
+                            window.close();
+                        } else {
+                            $(btn).html('Failed')
+                        }
+                    }
+                });
+            }
         }
     </script>
     <title>Vehicles for Rent</title>
@@ -94,6 +119,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th class="col6 d-none">Car ID</th>
                         <th class="col4">Make</th>
                         <th class="col6">Model</th>
                         <th class="col6">Year</th>
