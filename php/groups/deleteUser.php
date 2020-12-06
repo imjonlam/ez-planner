@@ -6,11 +6,12 @@
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $_GET["email"]);
 
+    $response = array();
     if ($stmt->execute()) {
-        echo "success";
+        $response["success"] = "success";
     } else {
-        echo "fail";
+        $response["error"] = "fail"
     }
 
-    exit;
+    exit(json_encode($response));
 ?>

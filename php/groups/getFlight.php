@@ -8,9 +8,5 @@
     $stmt->execute();
     $result = $stmt->get_result();
 
-    header('Content-type: application/json');
-    echo json_encode($result->fetch_all(MYSQLI_ASSOC));
-    $stmt->close();
-
-    exit;
+    exit(echo json_encode($result->fetch_all(MYSQLI_ASSOC)));
 ?>
