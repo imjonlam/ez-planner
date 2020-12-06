@@ -28,13 +28,21 @@
 
   <script>
     $(function () {
-      $("#nav-placeholder").load("../../common/navbar.html");
+            $("#nav-placeholder").load("../../common/navbar.html", function() {
+                $("#navTrips").addClass("nav-current");
+                $("#navTrips").append("<span class=\"sr-only\">(current)</span>");
+            });
+            $("#footer-placeholder").load("../../common/footer.html")
     });
   </script>
 </head>
 
 <body>
-  <header id="nav-placeholder"></header>
+
+    <!-- Nav Bar -->
+    <header id="nav-placeholder"></header>
+    <!-- Nav Bar -->
+  
   <div class="container">
     <div class="justify-content-center">
       <h1 class="text-justify-center">Itineraries</h1>
@@ -60,6 +68,10 @@
     </a>
     <br>
   </div>
+
+    <!-- Footer -->
+    <footer id="footer-placeholder"></footer>
+    <!-- Footer -->
 </body>
 
 </html>
