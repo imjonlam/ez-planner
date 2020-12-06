@@ -5,7 +5,7 @@ header {
     font-size: 40px;
     height: 151px;
     background-image: url("../img/header.png");
-    background-repeat: repeat-y;
+    background-repeat: repeat-x;
     background-attachment: fixed;
     background-position: 0 0;
 }
