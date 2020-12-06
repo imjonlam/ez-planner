@@ -33,16 +33,15 @@
             $("#nav-placeholder").load("../../common/navbar.html");
             $("#search-bar").load("search-bar.html");
             $("#footer-placeholder").load("../../common/footer.html")
-
             $.ajax({
-                type:"GET",
-                url:"../../php/flights/getFlights.php",
+                type: "GET",
+                url: "../../php/flights/getFlights.php",
                 dataType: "json",
-                async:false,
-                cache:false,
-                success: function(result) {
+                async: false,
+                cache: false,
+                success: function (result) {
                     if (result) {
-                        data = eval (result);
+                        data = eval(result);
                         var tbody = '';
                         $.each(data, function (key, value) {
                             tbody += '<tr>';
@@ -76,13 +75,13 @@
                 var group_name = searchParams.get("group");
 
                 $.ajax({
-                    type:"POST",
-                    url:"../../php/groups/addFlight.php",
+                    type: "POST",
+                    url: "../../php/groups/addFlight.php",
                     dataType: "json",
-                    data: {group: group_name, flight: flight_id},
-                    async:false,
-                    cache:false,
-                    success: function(response) {
+                    data: { group: group_name, flight: flight_id },
+                    async: false,
+                    cache: false,
+                    success: function (response) {
                         if (response['success']) {
                             $(btn).html('Saved');
                             window.close();
