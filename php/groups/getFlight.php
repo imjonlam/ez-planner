@@ -8,5 +8,5 @@
     $stmt->execute();
     $result = $stmt->get_result();
 
-    exit(echo json_encode($result->fetch_all(MYSQLI_ASSOC)));
+    exit(json_encode($result->fetch_all(MYSQLI_ASSOC)));
 ?>

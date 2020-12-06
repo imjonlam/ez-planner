@@ -1,6 +1,6 @@
 <div class="container">
     <div class="card">
-        <div class="row no-gutters">
+        <div id="car-info" class="row no-gutters">
             <div class="col-auto">
                 <img src="//placehold.it/300" id="car-img" class="img-fluid pt-5" width="300" height="300" alt="">
             </div>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="card-footer bg-white w-100 text-muted">
-            <a class="btn btn-secondary float-right" href="../cars/" target="_blank">Find Cars</a>
+            <button id="choose-car" class="btn btn-secondary float-right">Find Cars</button>
         </div>
     </div>
 </div>
@@ -50,7 +50,8 @@
                 async:false,
                 cache:false,
                 success: function(result) {
-                    if (result) {
+                    if (result.length > 0) {
+                        $("#car-info").removeClass('d-none');
                         document.getElementById("make").innerHTML = result["make"];
                         document.getElementById("model").innerHTML = result["model"];
                         document.getElementById("passengers").innerHTML = result["capacity"];
@@ -60,9 +61,19 @@
                         document.getElementById("allowance").innerHTML = result["allowance"];
                         document.getElementById("car-price").innerHTML = result["price"];   
                         document.getElementById("car-img").src = result["img"];    
+                    } else {
+                        $("#car-info").addClass('d-none');
                     }
                 }
             });
         }
     }
+
+    $("#choose-car").click(function() {
+        var searchParams = new URLSearchParams(window.location.search)
+        if (searchParams.has("group")) {
+            var link = "../cars/index.html" + "?group=" + searchParams.get("group");
+            window.open(link, "_blank");
+        }
+    });
 </script>

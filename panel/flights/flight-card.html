@@ -26,22 +26,13 @@
             </div>
         </div>
         <div class="card-footer bg-white w-100 text-muted">
-            <a class="btn btn-secondary float-right" href="../flights/" target="_blank">Find Flights</a>
+            <button id="choose-flight" class="btn btn-secondary float-right">Find Flights</button>
         </div>
     </div>
 </div>
 
 
-<script>
-//    $(function () {
-//        var searchParams = new URLSearchParams(window.location.search)
-//        if (searchParams.has("group")) {
-//            $("#flight-info").removeClass('d-none');
-//        } else {
-//            $("#flight-info").addClass('d-none');
-//        }
-//    });
-    
+<script>    
     loadFlight();
     document.addEventListener("visibilitychange", function() {
         loadFlight();
@@ -59,7 +50,8 @@
                 async:false,
                 cache:false,
                 success: function(result) {
-                    if (result) {
+                    if (result.length > 0) {
+                        $("#flight-info").removeClass('d-none');
                         document.getElementById("airline").innerHTML = result["airline"];
                         document.getElementById("from").innerHTML = result["origin"];
                         document.getElementById("from-abbr").innerHTML = result["origin_code"];
@@ -70,9 +62,19 @@
                         document.getElementById("class").innerHTML = result["class"];
                         document.getElementById("flight-price").innerHTML = result["price"];   
                         document.getElementById("flight-img").src = result["img"];   
+                    } else {
+                        $("#flight-info").addClass('d-none');
                     }
                 }
             });
         }
     }
+
+    $("#choose-flight").click(function() {
+        var searchParams = new URLSearchParams(window.location.search)
+        if (searchParams.has("group")) {
+            var link = "../flights/index.html" + "?group=" + searchParams.get("group");
+            window.open(link, "_blank");
+        }
+    });
 </script>

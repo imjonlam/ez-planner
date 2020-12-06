@@ -1,6 +1,6 @@
 <div class="container">
     <div class="card">
-        <div class="row no-gutters">
+        <div id="bnb-info" class="row no-gutters">
             <div class="col-auto">
                 <img src="//placehold.it/300" id="bnb-img" class="img-fluid pt-5" width="300" height="300" alt="">
             </div>
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="card-footer bg-white w-100 text-muted">
-            <a class="btn btn-secondary float-right" href="../bnb/" target="_blank">Find Bread and Breakfasts</a>
+            <button id="choose-bnb" class="btn btn-secondary float-right">Find Bread and Breakfasts</button>
         </div>
     </div>
 </div>
@@ -49,7 +49,8 @@
                 async:false,
                 cache:false,
                 success: function(result) {
-                    if (result) {
+                    if (result.length > 0) {
+                        $("#bnb-info").removeClass('d-none');
                         document.getElementById("location").innerHTML = result["location"];
                         document.getElementById("address").innerHTML = result["address"];
                         document.getElementById("city").innerHTML = result["city"];
@@ -60,38 +61,19 @@
                         document.getElementById("bnb-price").innerHTML = result["price"];   
                         document.getElementById("rating").innerHTML = '&#9733'.repeat(result["rating"]);   
                         document.getElementById("bnb-img").src = result["img"];   
+                    } else {
+                        $("#bnb-info").addClass('d-none');
                     }
                 }
             });
         }
     }
+
+    $("#choose-bnb").click(function() {
+        var searchParams = new URLSearchParams(window.location.search)
+        if (searchParams.has("group")) {
+            var link = "../bnb/index.html" + "?group=" + searchParams.get("group");
+            window.open(link, "_blank");
+        }
+    });
 </script>
-
-
-function chooseRow(btn) {
-    var td = $(btn).closest("tr").find("td")[0];
-    var loc = $(td).text();
-
-    var searchParams = new URLSearchParams(window.location.search)
-    if (searchParams.has("group")) {
-        $(btn).html("Saving");
-        var group_name = searchParams.get("group");
-
-        $.ajax({
-            type:"POST",
-            url:"../../php/groups/addBnb.php",
-            dataType: "json",
-            data: {group: group_name, bnb: loc},
-            async:false,
-            cache:false,
-            success: function(response){
-                if (response['success']) {
-                    $(btn).html('Saved');
-                    window.close();
-                } else {
-                    $(btn).html('Failed')
-                }
-            }
-        });
-    }
-}
