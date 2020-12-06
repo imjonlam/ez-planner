@@ -26,6 +26,7 @@
             $("#nav-placeholder").load("../../common/navbar.html", function() {
                 $("#navPacking").addClass("nav-current");
                 $("#navPacking").append("<span class=\"sr-only\">(current)</span>");
+                $("#navPacking").parent().addClass("active");
             });
             $("#footer-placeholder").load("../../common/footer.html")
     });
