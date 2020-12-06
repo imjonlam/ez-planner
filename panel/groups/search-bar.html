@@ -30,6 +30,7 @@
                     <div class="form-group">
                         <label for="group-name" class="col-form-label">Group Name</label> 
                         <input type="text" class="form-control" id="group-name" name="group-name" required>
+                        <div class="invalid-feedback">Group name taken</div>
                     </div>
                     <div class="form-group">
                         <label for="group-descr" class="col-form-label">Group Description</label> 
@@ -38,8 +39,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Create</button>
+                <button id="close-modal" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="create-group" type="button" class="btn btn-primary" onclick="createGroup(event)">Create</button>
             </div>
         </div>
     </div>
@@ -118,8 +119,40 @@
         }
     });
     
-     $("#create").click(function() {
-         var groupName = $("#group-name");
-         var description = $("#group-descr");
-     });
+    function createGroup(event) {
+        var group_name = $("#group-name");
+        var description = $("#group-descr");
+
+        available = true;
+        $('.group-name').each(function(i, obj) {
+            if (group_name == $(obj).text) {
+                available = false;
+                break;
+            }
+        });
+        
+        if (available) {
+            $(".invalid-feedback").removeClass("d-none");
+            $.ajax({
+                    type:"POST",
+                    url:"../../php/groups/createGroup.php",
+                    dataType: "json",
+                    data: {group: group_name, desc: description, email: username},
+                    async:false,
+                    cache:false,
+                    success: function(response) {
+                        if (response['success']) {
+                            $("#close-modal").click();
+                            $("#joined").click();
+                        } else {
+
+                        }
+                    }  
+            });
+        } else {
+            event.preventDefault();
+            event.stopPropagation();
+            $(".invalid-feedback").addClass("d-none");
+        }
+    };
 </script>
