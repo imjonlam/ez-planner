@@ -30,7 +30,7 @@
                     <div class="form-group">
                         <label for="group-name" class="col-form-label">Group Name</label> 
                         <input type="text" class="form-control" id="group-name" name="group-name" required>
-                        <div class="invalid-feedback">Group name taken</div>
+                        <div id="group-name-feedback" class="text-red d-none">Group name taken</div>
                     </div>
                     <div class="form-group">
                         <label for="group-descr" class="col-form-label">Group Description</label> 
@@ -129,18 +129,18 @@
     });
     
     function createGroup(event) {
-        var group_name = $("#group-name");
-        var description = $("#group-descr");
+        var group_name = $("#group-name").val();
+        var description = $("#group-descr").val();
 
         available = true;
         $('.group-name').each(function(i, obj) {
-            if (group_name == $(obj).text) {
+            if (group_name == $(obj).text()) {
                 available = false;
             }
         });
         
         if (available) {
-            $(".invalid-feedback").removeClass("d-none");
+            $("#group-name-feedback").addClass("d-none");
             $.ajax({
                     type:"POST",
                     url:"../../php/groups/createGroup.php",
@@ -160,7 +160,8 @@
         } else {
             event.preventDefault();
             event.stopPropagation();
-            $(".invalid-feedback").addClass("d-none");
+            $("#group-name-feedback").removeClass("d-none");
+            $("#group-name").val('');
         }
     };
 </script>
