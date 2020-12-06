@@ -38,6 +38,13 @@
             $("#search-bar").load("search-bar.html");
             $("#footer-placeholder").load("../../common/footer.html")
             
+            var hide = "";
+            var searchParams = new URLSearchParams(window.location.search)
+            if (!searchParams.has("group")) {
+                $("#th-action").addClass("d-none");
+                var hide = "d-none";
+            }
+
             $.ajax({
                 type: "GET",
                 url: "../../php/flights/getFlights.php",
@@ -61,7 +68,7 @@
                             tbody += '<td class="col6">' + value.class + '</td>';
                             tbody += '<td class="col6">' + value.price + '</td>';
                             tbody += '<td class="col6 invisible collapse">' + value.img + '</td>';
-                            tbody += '<td class="col6"><button name="save" class="save-btn btn btn-secondary" onclick="chooseRow(this)">Save</button></td>';
+                            tbody += '<td class="col6 ' + hide + '"><button name="save" class="save-btn btn btn-secondary" onclick="chooseRow(this)">Save</button></td>';
                             tbody += '</tr>';
                         });
                         $("#data").append(tbody);
@@ -132,7 +139,7 @@
                         <th class="col6">Duration</th>
                         <th class="col6">Type</th>
                         <th class="col6">Price</th>
-                        <th class="col6">Action</th>
+                        <th id="th-action" class="col6">Action</th>
                         <th class="col6 d-none">Image</th>
                     </tr>
                 </thead>
