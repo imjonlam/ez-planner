@@ -48,20 +48,6 @@
 <!-- End Create -->
 
 <script>
-    var username = '';
-    $(function () {
-        $.ajax({
-            url:'../../php/usercheck.php',
-            cache:false,
-            success:function(email){
-                if (email) {
-                    username = email;
-                    $("#joined").click();
-                }
-            }
-        });
-    });
-
     function filterGroups() {
         var input = document.getElementById("filter");
         var filter = input.value.toUpperCase();
