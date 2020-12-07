@@ -62,7 +62,7 @@
                         document.getElementById("allowance").innerHTML = result["allowance"];
                         document.getElementById("car-price").innerHTML = result["price"];   
                         document.getElementById("car-img").src = result["img"];
-                        document.getElementById("car-img").attr('alt', result["img"].substr(0, result["img"].lastIndexOf('.')));       
+                        $("#car-img").attr("alt", strip_extension(basename(result["img"],"/")));       
                     } else {
                         $("#car-info").addClass('d-none');
                     }
