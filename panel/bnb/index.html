@@ -61,12 +61,8 @@
                             tbody += '<td class="col6">' + value.address + '</td>';
                             tbody += '<td class="col6">' + value.city + '</td>';
                             tbody += '<td class="col6">' + value.province + '</td>';
-                            tbody += '<td class="col6 invisible collapse">' + value.postal + '</td>';
-                            tbody += '<td class="col6 invisible collapse">' + value.country + '</td>';
                             tbody += '<td class="col6">' + value.contact + '</td>';
                             tbody += '<td class="col6">' + value.price + '</td>';
-                            tbody += '<td class="col6 invisible collapse">' + value.rating + '</td>';
-                            tbody += '<td class="col6 invisible collapse">' + value.img + '</td>';
                             tbody += '<td class="col6 ' + hide + '"><button name="save" class="save-btn btn btn-secondary" onclick="chooseRow(this)">Save</button></td>';
                             tbody += '</tr>';
                         });
@@ -131,12 +127,8 @@
                         <th class="col6">Address</th>
                         <th class="col6">City</th>
                         <th class="col6">Province</th>
-                        <th class="col6 d-none">Postal Code</th>
-                        <th class="col6 d-none">Country</th>
                         <th class="col6">Contact</th>
                         <th class="col6">Price</th>
-                        <th class="col6 d-none">Rating</th>
-                        <th class="col6 d-none">Image</th>
                         <th id="th-action" class="col6">Action</th>
                     </tr>
                 </thead>

@@ -61,7 +61,8 @@
                         document.getElementById("transmission").innerHTML = result["transmission"];
                         document.getElementById("allowance").innerHTML = result["allowance"];
                         document.getElementById("car-price").innerHTML = result["price"];   
-                        document.getElementById("car-img").src = result["img"];    
+                        document.getElementById("car-img").src = result["img"];
+                        document.getElementById("car-img").attr('alt', result["img"].substr(0, result["img"].lastIndexOf('.')));       
                     } else {
                         $("#car-info").addClass('d-none');
                     }

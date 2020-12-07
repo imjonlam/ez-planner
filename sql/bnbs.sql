@@ -24,12 +24,3 @@ VALUES
 ('Wyndham Garden Calgary Airport','11 Freeport Cres Northeast','Calgary','AB','T3J 0T4','Canada','+1 403 516 2266',91,5,'../../data/bnb/wyndham_garden.jpg'),
 ('Hotel Arts','119 12th Avenue Sw','Calgary','AB','M6J 1J4','Canada','+1 403 266 4611',165,3,'../../data/bnb/hotel_arts.jpg'),
 ('Hotel Le Germain Montreal','2050 Rue Mansfield','Montreal','QC','H3A 1Y9','Canada','+1 514 849 2050',262,3,'../../data/bnb/hotel_le_germain.jpg');
-
--- select all bnb records
-SELECT location, address, city, province, postal_code, country, price, rating, img FROM bnbs;
-
--- select bnb from group
-SELECT location, address, city, province, postal_code, country, price, rating, img
-FROM bnbs, group_bnbs
-WHERE group_name = 'some_group'
-AND location = bnb;

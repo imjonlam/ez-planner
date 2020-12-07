@@ -60,14 +60,11 @@
                             tbody += '<td class="col6 invisible collapse">' + value.flight_id + '</td>';
                             tbody += '<td class="col4">' + value.airline + '</td>';
                             tbody += '<td class="col6">' + value.origin + '</td>';
-                            tbody += '<td class="col6 invisible collapse">' + value.origin_code + '</td>';
                             tbody += '<td class="col6">' + value.destination + '</td>';
-                            tbody += '<td class="col6 invisible collapse">' + value.destination_code + '</td>';
                             tbody += '<td class="col6">' + value.stops + '</td>';
                             tbody += '<td class="col6">' + value.duration + '</td>';
                             tbody += '<td class="col6">' + value.class + '</td>';
                             tbody += '<td class="col6">' + value.price + '</td>';
-                            tbody += '<td class="col6 invisible collapse">' + value.img + '</td>';
                             tbody += '<td class="col6 ' + hide + '"><button name="save" class="save-btn btn btn-secondary" onclick="chooseRow(this)">Save</button></td>';
                             tbody += '</tr>';
                         });
@@ -132,15 +129,12 @@
                         <th class="col6 d-none">Flight ID</th>
                         <th class="col4">Airline</th>
                         <th class="col6">From</th>
-                        <th class="col6 d-none">From-Abbr</th>
                         <th class="col6">To</th>
-                        <th class="col6 d-none">To-Abbr</th>
                         <th class="col6">Stops</th>
                         <th class="col6">Duration</th>
                         <th class="col6">Type</th>
                         <th class="col6">Price</th>
                         <th id="th-action" class="col6">Action</th>
-                        <th class="col6 d-none">Image</th>
                     </tr>
                 </thead>
                 <tbody id="data"></tbody>

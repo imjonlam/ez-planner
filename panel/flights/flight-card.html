@@ -62,7 +62,8 @@
                         document.getElementById("duration").innerHTML = result["duration"];
                         document.getElementById("class").innerHTML = result["class"];
                         document.getElementById("flight-price").innerHTML = result["price"];   
-                        document.getElementById("flight-img").src = result["img"];   
+                        document.getElementById("flight-img").src = result["img"];
+                        document.getElementById("flight-img").attr('alt', result["img"].substr(0, result["img"].lastIndexOf('.')));
                     } else {
                         $("#flight-info").addClass('d-none');
                     }

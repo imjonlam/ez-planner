@@ -27,12 +27,3 @@ VALUES
 ('WestJet','Toronto','Calgary','YYZ','YYC','Direct','4h 09m','Standard',374,'../../data/flights/west_jet.jpg'),
 ('Air Canada','Toronto','Calgary','YYZ','YYC','Direct','3h 56m','Standard',374,'../../data/flights/air_canada.jpg'),
 ('Air Canada','Toronto','Victoria','YYZ','YYJ','Direct','4h 30m','Standard',649,'../../data/flights/air_canada.jpg');
-
--- select all flight records
-SELECT airline, class, origin, origin_code, destination, destination_code, price, stops, duration, img FROM flights; 
-
--- select flight from group
-SELECT airline, class, origin, origin_code, destination, destination_code, price, stops, duration, img
-FROM flights, group_flights
-WHERE group_name = 'some_group'
-AND airline = flight;

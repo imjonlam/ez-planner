@@ -10,18 +10,3 @@ CREATE TABLE IF NOT EXISTS users (
     postal_code VARCHAR(10) NOT NULL,
     country VARCHAR(20) NOT NULL
 );
-
--- insert a user into table
-INSERT INTO users (email, first_name, last_name, password, address, city, province, postal_code, country)
-VALUES ('email', 'first_name', 'last_name', 'password', 'address', 'city', 'province', 'postal_code', 'country');
-
--- select user by email
-SELECT email 
-FROM users
-WHERE email = "some_email";
-
--- user login
-SELECT email
-FROM users
-WHERE email = "some_email"
-AND password = "some_password"

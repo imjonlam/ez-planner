@@ -26,12 +26,3 @@ VALUES
 ('CHEVROLET','CORVETTE',2006,'Coupe',2,60,'Manual',1000,'../../data/cars/2006_z06.jpg'),
 ('MERCEDES-BENZ','ML350',2009,'Sedan',4,44,'Automatic',1500,'../../data/cars/2009_mercedes_benz_ml350.jpg'),
 ('HUMMER','H2',2008,'Sedan',6,66,'Automatic',2000,'../../data/cars/2008_hummer_h2.jpg');
-
--- select all car records
-SELECT make, model, year, type, capacity, allowance, price, transmission, img FROM cars; 
-
--- select car from group
-SELECT make, model, year, type, capacity, allowance, price, transmission, img
-FROM cars, group_cars
-WHERE group_name = 'some_group'
-AND car_id = car;

@@ -66,9 +66,6 @@
                             tbody += '<td class="col6">' + value.price + '</td>';
                             tbody += '<td class="col6">' + value.capacity + '</td>';
                             tbody += '<td class="col6 ' + hide + '"><button name="save" class="save-btn btn btn-secondary" onclick="chooseRow(this)">Save</button></td>';
-                            tbody += '<td class="col6 invisible collapse ">' + value.transmission + '</td>';
-                            tbody += '<td class="col6 invisible collapse ">' + value.allowance + '</td>';
-                            tbody += '<td class="col6 invisible collapse ">' + value.img + '</td>';
                             tbody += '</tr>';
                         });
                         $('#data').append(tbody);
@@ -138,9 +135,6 @@
                         <th class="col6">Price</th>
                         <th class="col6">Capacity</th>
                         <th id="th-action" class="col6">Rent</th>
-                        <th class="col6 d-none">Transmission</th>
-                        <th class="col6 d-none">Allowance</th>
-                        <th class="col6 d-none">Image</th>
                     </tr>
                 </thead>
                 <tbody id="data"></tbody>

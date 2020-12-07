@@ -62,6 +62,7 @@
                         document.getElementById("bnb-price").innerHTML = result["price"];   
                         document.getElementById("rating").innerHTML = '&#9733'.repeat(result["rating"]);   
                         document.getElementById("bnb-img").src = result["img"];   
+                        document.getElementById("bnb-img").attr('alt', result["img"].substr(0, result["img"].lastIndexOf('.')));       
                     } else {
                         $("#bnb-info").addClass('d-none');
                     }
