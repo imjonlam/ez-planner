@@ -2,7 +2,7 @@
     include '../connect.php';
     $conn = connect();
 
-    $sql = "DELETE FROM group_members WHERE group = ? AND user = ?";
+    $sql = "DELETE FROM group_members WHERE group_name = ? AND user = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $_POST["group"],  $_POST["email"]);
 
