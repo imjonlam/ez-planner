@@ -7,7 +7,7 @@ body{
   margin:0;
   font-family: 'prompt', sans-serif;
   font-size:17px;
-  color:#00cccc;
+  color:#19B1EE;
   line-height:1.6;
 }
 
@@ -36,15 +36,15 @@ body{
 #destination .button{
   font-size:18px;
   text-decoration:none;
-  color:#00cccc;
-  border:#00cccc 2px solid;
+  color:#19B1EE;
+  border:#19B1EE 2px solid;
   padding:10px 20px;
   border-radius:10px;
   margin-top:20px;
 }
 
 #destination .button:hover{
-  background:#00cccc;
+  background:#19B1EE;
   color:#fff;
 }
 
@@ -64,7 +64,7 @@ body{
 }
 
 #back .button:hover{
-  background:#00cccc;
+  background:#19B1EE;
   color:#fff;
-  border:#00cccc 2px solid;
+  border:#19B1EE 2px solid;
 }

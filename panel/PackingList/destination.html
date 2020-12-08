@@ -19,39 +19,107 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,300;0,700;0,800;1,100;1,600;1,700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="../../css/destination.css">
+
+  <link rel="stylesheet" href="../../css/cps530.css">
   <title>Select your destination</title>
   <script>
     $(function () {
-            $("#nav-placeholder").load("../../common/navbar.html", function() {
-                $("#navPacking").addClass("nav-current");
-                $("#navPacking").append("<span class=\"sr-only\">(current)</span>");
-                $("#navPacking").parent().addClass("active");
-            });
-            $("#footer-placeholder").load("../../common/footer.html")
+      $("#nav-placeholder").load("../../common/navbar.html", function () {
+        $("#navPacking").addClass("nav-current");
+        $("#navPacking").append("<span class=\"sr-only\">(current)</span>");
+        $("#navPacking").parent().addClass("active");
+      });
+      $("#footer-placeholder").load("../../common/footer.html")
     });
   </script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <!-- Nav Bar -->
-    <header id="nav-placeholder"></header>
-    <!-- Nav Bar -->
-  
-  <header id="destination">
-    <h1>Please select your destination</h1>
-    <br>
-    <a href="Asia.html" class="button">Asia</a>
-    <a href="Europe.html" class="button">Europe</a>
-    <a href="nAmerica.html" class="button">North America</a>
-    <a href="sAmerica.html" class="button">South America</a>
-    <a href="Oceania.html" class="button">Oceania</a>
-  </header>
-  
-    <!-- Footer -->
-    <footer id="footer-placeholder"></footer>
-    <!-- Footer -->
-  
+  <!-- Nav Bar -->
+  <header id="nav-placeholder"></header>
+  <!-- Nav Bar -->
+
+  <div class="container">
+    <div class="pt-3 mb-3">
+      <h1 class="display-5 text-center">Please select your destination</h1>
+    </div>
+    <div class="row align-items-center mb-3">
+      <div class="col-md-5 offset-md-1">
+        <div class="text-center">
+          <a href="Asia.html" class="button">
+            <div class="img-container">
+              <img src="../../img/asia.jpg" class="iti-img">
+              <br>
+              <div class="overlay">
+                <span>Asia</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="text-center">
+          <a href="Europe.html" class="button">
+            <div class="img-container">
+              <img src="../../img/europe.jpeg" class="iti-img">
+              <br>
+              <div class="overlay">
+                <span>Europe</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-center mb-3">
+      <div class="col-md-5 offset-md-1">
+        <div class="text-center">
+          <a href="nAmerica.html" class="button">
+            <div class="img-container">
+              <img src="../../img/namerica.jpg" class="iti-img">
+              <br>
+              <div class="overlay">
+                <span>North America</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="text-center">
+          <a href="sAmerica.html" class="button">
+            <div class="img-container">
+              <img src="../../img/samerica.jpg" class="iti-img">
+              <br>
+              <div class="overlay">
+                <span>South America</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-center mb-3">
+      <div class="col-md-6 offset-md-3">
+        <div class="text-center">
+          <a href="Oceania.html" class="button">
+            <div class="img-container">
+              <img src="../../img/oceania.jpg" class="iti-img">
+              <br>
+              <div class="overlay">
+                <span>Oceania</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer-placeholder" class="mt-auto"></footer>
+  <!-- Footer -->
+
 </body>
 
 </html>

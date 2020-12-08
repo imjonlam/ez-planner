@@ -99,12 +99,13 @@ a {
 
 #section1{
   padding:20px;
-  background:#00cccc;
+  background:#19B1EE;
   color:#fff;
   text-align:center;
   margin-left: 15vw;
   margin-right: 15vw;
   border-radius: 15px;
+  text-decoration: none;
 }
 
 #section1 .button{
@@ -117,13 +118,14 @@ a {
 }
 
 #section1 .button:hover{
-  background:#00cccc;
+  background:#19B1EE;
   color:#fff;
+  text-decoration: none;
 }
 
 #section2{
   padding:20px;
-  background:#00cccc;
+  background:#19B1EE;
   color:#fff;
   text-align:center;
   margin-left: 15vw;
@@ -141,6 +143,8 @@ a {
 }
 
 #section2 .button:hover{
-  background:#00cccc;
+  background:#19B1EE;
   color:#fff;
+  text-decoration: none;
+
 }

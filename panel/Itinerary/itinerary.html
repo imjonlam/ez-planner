@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatiable" content="ie=edge">
-  <link rel="stylesheet" href="../../css/itinerary.css">
+
   <title>Itinerary</title>
   <!-- Jquery -->
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -20,6 +20,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="../../css/cps530.css">
+  <link rel="stylesheet" href="../../css/itinerary.css">
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
@@ -28,51 +29,59 @@
 
   <script>
     $(function () {
-            $("#nav-placeholder").load("../../common/navbar.html", function() {
-                $("#navTrips").addClass("nav-current");
-                $("#navTrips").append("<span class=\"sr-only\">(current)</span>");
-                $("#navTrips").parent().addClass("active");
-            });
-            $("#footer-placeholder").load("../../common/footer.html")
+      $("#nav-placeholder").load("../../common/navbar.html", function () {
+        $("#navTrips").addClass("nav-current");
+        $("#navTrips").append("<span class=\"sr-only\">(current)</span>");
+        $("#navTrips").parent().addClass("active");
+      });
+      $("#footer-placeholder").load("../../common/footer.html");
     });
   </script>
 </head>
 
 <body>
 
-    <!-- Nav Bar -->
-    <header id="nav-placeholder"></header>
-    <!-- Nav Bar -->
-  
+  <!-- Nav Bar -->
+  <header id="nav-placeholder"></header>
+  <!-- Nav Bar -->
+
   <div class="container">
-    <div class="justify-content-center">
-      <h1 class="text-justify-center">Itineraries</h1>
+    <div class="pt-3 mb-3">
+      <h1 class="display-5 text-center">Pre-planned Packages</h1>
     </div>
-
-
-    <a href="nyc.html" class="button">
-      <section id="section1">
-        <img src="../../img/nyc.jpg" style="width:90%;min-height:90px">
-        <br>
-        <h2>NYC 5 Days Trip</h2>
-      </section>
-    </a>
-    <br>
-
-    <a href="lake.html" class="button">
-      <section id="section2">
-        <img src="../../img/lake.jpg" style="width:90%;min-height:90px">
-        <br>
-        <a href="lake.html" class="button">
-          <h2>3 Days Canoe Trip</h2>
-      </section>
-    </a>
-    <br>
+    <div class="row align-items-center">
+      <div class="col-md-5 offset-md-1">
+        <div class="text-center">
+          <a href="nyc.html" class="button">
+            <div class="img-container">
+              <img src="../../img/nyc.jpg" class="iti-img">
+              <br>
+              <div class="overlay">
+                <span>5 Day New York City Trip</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="text-center">
+          <a href="lake.html" class="button">
+            <div class="img-container">
+              <img src="../../img/lake.jpg" class="iti-img">
+              <br>
+              <div class="overlay">
+                <span>3 Day Canoe Trip</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
-    <!-- Footer -->
-    <footer id="footer-placeholder" class="mt-auto"></footer>
-    <!-- Footer -->
+  <!-- Footer -->
+  <footer id="footer-placeholder" class="mt-auto bottom"></footer>
+  <!-- Footer -->
 </body>
 
 </html>

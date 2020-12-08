@@ -19,6 +19,11 @@ body{
   align-items:center;
   text-align:center;
   padding:0 20px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 h1{
@@ -41,7 +46,7 @@ p{
 }
 
 .button:hover{
-  background:#00cccc;
+  background:#19B1EE;
   color:#fff;
-  border:#00cccc 2px solid;
+  border:#19B1EE 2px solid;
 }
