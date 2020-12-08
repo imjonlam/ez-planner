@@ -4,6 +4,10 @@
     background-color: #fff;
 }
 
+#car-img, #bnb-img, #flight-img {
+  border-radius: 15px;
+}
+
 .results-table th, .results-table td {
   font-weight: unset;
   padding-right: 10px;
