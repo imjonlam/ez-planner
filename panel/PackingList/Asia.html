@@ -30,164 +30,279 @@
 <body>
   <header id="nav-placeholder">
   </header>
-  <header id="header">
-    <h1>Essentials for traveling in Asia</h1>
-  </header>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Essentials for traveling in Asia</h1>
+      <p class="lead">Suggested items you bring on your trip</p>
+    </div>
+  </div>
+  <div class="container">
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header theme-col" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              Travel Documents
+            </button>
+          </h5>
+        </div>
 
-  <section id="section">
-    <form action="/action_page.php">
-      <p>Travel Documents</p>
-      <input type="checkbox" id="doc" name="doc" value="passport">
-      <label for="doc"> Passport</label><br>
-      <input type="checkbox" id="doc" name="doc" value="visa">
-      <label for="doc"> Valid Visa</label>
-      <p>It is important to have the Visa for the country you are traveling to before starting your trip.</p>
-    </form>
-    <br>
-    <form action="/action_page.php">
-      <p>Daily Essentials</p>
-      <input type="checkbox" id="daily" name="daily" value="passport">
-      <label for="daily"> A bar of soap</label><br>
-      <input type="checkbox" id="daily" name="daily" value="passport">
-      <label for="daily"> Tooth brush</label><br>
-      <input type="checkbox" id="daily" name="daily" value="passport">
-      <label for="daily"> Tooth paste</label><br>
-      <input type="checkbox" id="daily" name="daily" value="passport">
-      <label for="daily"> Shampoo</label><br>
-      <input type="checkbox" id="daily" name="daily" value="passport">
-      <label for="daily"> Conditioner</label><br>
-      <input type="checkbox" id="daily" name="daily" value="passport">
-      <label for="daily"> Body wash</label><br>
-      <input type="checkbox" id="daily" name="daily" value="passport">
-      <label for="daily"> Towel</label><br>
-    </form>
-    <br>
-    <section id="femalecloth">
-      <form action="/action_page.php">
-        <p>Clothes for Female</p>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Hoodies</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> T-shirts</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Shorts</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Long loose pants</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Swimsuit</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Sundresses</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Hair-ties</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Under wear</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Socks</label><br>
-      </form>
-    </section>
-    <br>
-    <section id="malecloth">
-      <form action="/action_page.php">
-        <p>Clothes for Male</p>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Hoodies</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Vests</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> T-shirt</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Shorts</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Long loose pants</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Under wear</label><br>
-        <input type="checkbox" id="clothes" name="clothes" value="passport">
-        <label for="clothes"> Socks</label><br>
-      </form>
-    </section>
-    <br>
-    <form action="/action_page.php">
-      <p>Outdoor Essentials</p>
-      <input type="checkbox" id="outdoor" name="outdoor" value="backpack">
-      <label for="outdoor"> One day backpack</label>
-      <p>You will need something to carry all the essentials you might need during a day.</p>
-      <input type="checkbox" id="outdoor" name="outdoor" value="sunglasses">
-      <label for="outdoor"> Sunglasses</label>
-      <p>The sun is extremely strong in Southeast Asia and prolonged exposure to UV rays can seriously damage your eyes,
-        especially if you’re used to being in dull, rainy England.
-        We advise that you invest in some decent sunglasses back home that protect your eyes from UVA and UVB rays. </p>
-      <input type="checkbox" id="outdoor" name="outdoor" value="hat">
-      <label for="outdoor"> Hat</label><br>
-      <input type="checkbox" id="outdoor" name="outdoor" value="Sunscreen">
-      <label for="outdoor"> High factor sunscreen</label>
-      <p>This is non-negotiable no matter where you’re travelling to,
-        but it’s even more important to think about ahead of time because sunscreen comes at a much higher cost in
-        Southeast Asia.
-        Stock up on sunscreen at home for a better value. </p>
-      <input type="checkbox" id="outdoor" name="outdoor" value="shoes">
-      <label for="outdoor"> Hiking shoes</label>
-      <p>If you are traveling to somewhere rains a lot, we recommend ones that comes with Goretex lining, they can
-        prevent water from getting insede of youe shoes and keep your feet dry, but they are not quite breathable.
-        Therefore, if you are traveling to Southeast Asia, ones that are more breathable are better choice and they dry
-        faster.</p>
-      <input type="checkbox" id="outdoor" name="outdoor" value="rain coat">
-      <label for="outdoor"> Rain coat</label><br>
-      <input type="checkbox" id="outdoor" name="outdoor" value="power">
-      <label for="outdoor"> Portable power supply and charging cable:</label>
-      <p>Carrying a portable power supply can prevent your electronic devices from dying,
-        but do pay attention on the capacity because there is a regulation on what type of power supply you can carry on
-        the flight.
-        Normally 10000mAh is way more that enough for daily use, and you can have 3-4 charges before it runs out.</p>
-    </form>
-    <br>
-    <form action="/action_page.php">
-      <p>Medical</p>
-      <input type="checkbox" id="medical" name="medical" value="kit">
-      <label for="medical"> First aid kit</label>
-      <p>Having at least a basic first aid kit handy is crucial.
-        In Asia’s humidity, cuts, burns and grazes can become infected really easily and it’s essential to take care of
-        the wound so that it doesn’t lead to a bigger problem.
-        Anti-septic wipes, alcohol, iodine and anti-septic cream are a must, as well as decent plasters (band-aids) and
-        bandages to cover the cut up.
-        A good first aid kit also comes with a thermometer which is the best and first way to check if you’re coming
-        down with a fever.</p>
-      <input type="checkbox" id="medical" name="medical" value="Aloe vera">
-      <label for="medical"> Aloe vera gel</label>
-      <p>Aloe vera gel is able to disinfect and help healing all kinds of wounds</p>
-      <input type="checkbox" id="medical" name="medical" value="Mosquito repellant">
-      <label for="medical"> Mosquito repellant</label>
-      <p>An essential item that you simply must carry around with you, as you never know when the mosquitoes will
-        strike!
-        As well as causing itchy, painful bites, the more serious illness caused by mosquitoes is Dengue Fever, and, of
-        course, depending on where you travel.</p>
-      <input type="checkbox" id="medical" name="medical" value="Afterbite">
-      <label for="medical"> Afterbite</label><br>
-      <input type="checkbox" id="medical" name="medical" value="Adhensive bandage">
-      <label for="medical"> Adhensive bandage</label>
-      <p>These would be helpful for dealing with small cuts, normally they come with the first aid kit menytioned above,
-        but it is better to carry more because you will need to change them frequently.</p>
-    </form>
-    <br>
-    <form action="/action_page.php">
-      <p>Others</p>
-      <input type="checkbox" id="other" name="other" value="cash">
-      <label for="other"> Some cash depending on where you are traveling</label><br>
-      <input type="checkbox" id="other" name="other" value="adapter">
-      <label for="other"> Power adapter</label>
-      <p>Get yourself one of those universal travel adaptors that work in every country of the world and it will be a
-        lifetime investment.</p>
-      <input type="checkbox" id="other" name="other" value="light">
-      <label for="other"> Flashlight</label>
-      <p>An EDC type flashlight can be useful when walking in the dark,
-        especially if you don't want to drain out the battery of your phone.
-        It can also be used for sending distress signal.</p>
-      <br>
-    </form>
-    <br>
-    <a href="good.html" class="button">Good to go!</a>
-    <br>
-    <br>
-    <section>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <input type="checkbox" id="doc" name="doc" value="passport">
+            <label for="doc"> Passport</label><br>
+            <input type="checkbox" id="doc" name="doc" value="visa">
+            <label for="doc"> Valid Visa</label>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header theme-col" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed text-white" data-toggle="collapse" data-target="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">
+              Daily Essentials
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            <input type="checkbox" id="daily" name="daily" value="passport">
+            <label for="daily"> Bar of soap</label><br>
+            <input type="checkbox" id="daily" name="daily" value="passport">
+            <label for="daily"> Tooth brush</label><br>
+            <input type="checkbox" id="daily" name="daily" value="passport">
+            <label for="daily"> Tooth paste</label><br>
+            <input type="checkbox" id="daily" name="daily" value="passport">
+            <label for="daily"> Shampoo</label><br>
+            <input type="checkbox" id="daily" name="daily" value="passport">
+            <label for="daily"> Conditioner</label><br>
+            <input type="checkbox" id="daily" name="daily" value="passport">
+            <label for="daily"> Body wash</label><br>
+            <input type="checkbox" id="daily" name="daily" value="passport">
+            <label for="daily"> Towel</label><br>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header theme-col" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed text-white" data-toggle="collapse" data-target="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree">
+              Clothes for Female
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Hoodies</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> T-shirts</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Shorts</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Long loose pants</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Swimsuit</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Sundresses</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Hair-ties</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Under wear</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Socks</label><br>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header theme-col" id="headingFour">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed text-white" data-toggle="collapse" data-target="#collapseFour"
+              aria-expanded="false" aria-controls="collapseFour">
+              Clothes for Male
+            </button>
+          </h5>
+        </div>
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+          <div class="card-body">
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Hoodies</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Vests</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> T-shirt</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Shorts</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Long loose pants</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Under wear</label><br>
+            <input type="checkbox" id="clothes" name="clothes" value="passport">
+            <label for="clothes"> Socks</label><br>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header theme-col" id="headingFive">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed text-white" data-toggle="collapse" data-target="#collapseFive"
+              aria-expanded="false" aria-controls="collapseFive">
+              Outdoor Essentials
+            </button>
+          </h5>
+        </div>
+        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+          <div class="card-body">
+            <input type="checkbox" id="outdoor" name="outdoor" value="backpack">
+            <label for="outdoor"> One day backpack</label>
+            <div class="indented">
+              <p>You will need something to carry all the essentials you might need during a day.</p>
+            </div>
+            <input type="checkbox" id="outdoor" name="outdoor" value="sunglasses">
+            <label for="outdoor"> Sunglasses</label>
+            <div class="indented">
+              <p>The sun is extremely strong in Southeast Asia and prolonged exposure to UV rays can seriously damage
+                your
+                eyes,
+                especially if you’re used to being in dull, rainy England.
+                We advise that you invest in some decent sunglasses back home that protect your eyes from UVA and UVB
+                rays. </p>
+            </div>
+
+            <input type="checkbox" id="outdoor" name="outdoor" value="hat">
+            <label for="outdoor"> Hat</label><br>
+            <input type="checkbox" id="outdoor" name="outdoor" value="Sunscreen">
+            <label for="outdoor"> High factor sunscreen</label>
+            <div class="indented">
+              <p>This is non-negotiable no matter where you’re travelling to,
+                but it’s even more important to think about ahead of time because sunscreen comes at a much higher cost
+                in
+                Southeast Asia.
+                Stock up on sunscreen at home for a better value. </p>
+            </div>
+            <input type="checkbox" id="outdoor" name="outdoor" value="shoes">
+            <label for="outdoor"> Hiking shoes</label>
+            <div class="indented">
+              <p>If you are traveling to somewhere rains a lot, we recommend ones that comes with Goretex lining, they
+                can
+                prevent water from getting insede of youe shoes and keep your feet dry, but they are not quite
+                breathable.
+                Therefore, if you are traveling to Southeast Asia, ones that are more breathable are better choice and
+                they dry
+                faster.</p>
+            </div>
+            <input type="checkbox" id="outdoor" name="outdoor" value="rain coat">
+            <label for="outdoor"> Rain coat</label><br>
+            <input type="checkbox" id="outdoor" name="outdoor" value="power">
+            <label for="outdoor"> Portable power supply and charging cable:</label>
+            <div class="indented">
+              <p>Carrying a portable power supply can prevent your electronic devices from dying,
+                but do pay attention on the capacity because there is a regulation on what type of power supply you can
+                carry on
+                the flight.
+                Normally 10000mAh is way more that enough for daily use, and you can have 3-4 charges before it runs
+                out.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header theme-col" id="headingSix">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed text-white" data-toggle="collapse" data-target="#collapseSix"
+              aria-expanded="false" aria-controls="collapseSix">
+              Medical
+            </button>
+          </h5>
+        </div>
+        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+          <div class="card-body">
+            <input type="checkbox" id="medical" name="medical" value="kit">
+            <label for="medical"> First aid kit</label>
+            <div class="indented">
+              <p>Having at least a basic first aid kit handy is crucial.
+                In Asia’s humidity, cuts, burns and grazes can become infected really easily and it’s essential to take
+                care of
+                the wound so that it doesn’t lead to a bigger problem.
+                Anti-septic wipes, alcohol, iodine and anti-septic cream are a must, as well as decent plasters
+                (band-aids) and
+                bandages to cover the cut up.
+                A good first aid kit also comes with a thermometer which is the best and first way to check if you’re
+                coming
+                down with a fever.</p>
+            </div>
+            <input type="checkbox" id="medical" name="medical" value="Aloe vera">
+            <label for="medical"> Aloe vera gel</label>
+            <div class="indented">
+              <p>Aloe vera gel is able to disinfect and help healing all kinds of wounds</p>
+            </div>
+            <input type="checkbox" id="medical" name="medical" value="Mosquito repellant">
+            <label for="medical"> Mosquito repellant</label>
+            <div class="indented">
+              <p>An essential item that you simply must carry around with you, as you never know when the mosquitoes
+                will
+                strike!
+                As well as causing itchy, painful bites, the more serious illness caused by mosquitoes is Dengue Fever,
+                and, of
+                course, depending on where you travel.</p>
+            </div>
+            <input type="checkbox" id="medical" name="medical" value="Afterbite">
+            <label for="medical"> Afterbite</label><br>
+            <input type="checkbox" id="medical" name="medical" value="Adhensive bandage">
+            <label for="medical"> Adhensive bandage</label>
+            <div class="indented">
+              <p>These would be helpful for dealing with small cuts, normally they come with the first aid kit
+                menytioned
+                above,
+                but it is better to carry more because you will need to change them frequently.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header theme-col" id="headingSeven">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed text-white" data-toggle="collapse" data-target="#collapseSeven"
+              aria-expanded="false" aria-controls="collapseSeven">
+              Others
+            </button>
+          </h5>
+        </div>
+        <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+          <div class="card-body">
+            <input type="checkbox" id="other" name="other" value="cash">
+            <label for="other"> Some cash depending on where you are traveling</label><br>
+            <input type="checkbox" id="other" name="other" value="adapter">
+            <label for="other"> Power adapter</label>
+            <div class="indented">
+              <p>Get yourself one of those universal travel adaptors that work in every country of the world and it will
+                be a
+                lifetime investment.</p>
+            </div>
+            <input type="checkbox" id="other" name="other" value="light">
+            <label for="other"> Flashlight</label>
+            <div class="indented">
+              <p>An EDC type flashlight can be useful when walking in the dark,
+                especially if you don't want to drain out the battery of your phone.
+                It can also be used for sending distress signal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3"></div>
+    <div class="text-center mb-3">
+      <a href="good.html" class="btn theme-col">Good to go!</a>
+    </div>
+
+  </div>
+
+  <footer id="footer-placeholder" class="mt-auto"></footer>
+
 </body>
 
 </html>

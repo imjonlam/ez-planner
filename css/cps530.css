@@ -1,6 +1,7 @@
 body {
     background-color: #F6F3F3;
     font-family: 'prompt', sans-serif;
+    color: black;
 }
 
 
@@ -17,13 +18,24 @@ body {
 }
 
 .theme-col {
-    background-color: #19B1EE;
-    border-color: #19B1EE;
+    background-color: #648698;
+    border-color: #648698;
+    color: #fff;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.indented {
+    padding-left: 19px;
 }
 
 .theme-col:hover {
-    background-color: #1e99eb;
-    border-color: #1e99eb;
+    background-color: #a0b2bc;
+    border-color: #a0b2bc;
+    text-decoration: none;
+    color:#fff;
 }
 
 .write-col {
