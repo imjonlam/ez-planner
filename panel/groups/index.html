@@ -28,8 +28,9 @@
     
     <script>
         var username = "";
-
         $(function() {
+            $("#data").addClass("d-none");
+            
             $.ajax({
                 url:'../../php/usercheck.php',
                 cache:false,
@@ -165,7 +166,7 @@
                         <th class="col6">Action</th>
                     </tr>
                 </thead>
-                <tbody id="data"></tbody>
+                <tbody id="data" class="d-none"></tbody>
                 <tbody id="none" class="d-none"><td colspan="4" class="text-center w-100">NO AVAILABLE GROUPS</td></tbody>
             </table>
         </div>
