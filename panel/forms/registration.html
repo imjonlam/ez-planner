@@ -24,47 +24,45 @@
         <form action="../../php/register.php" class="form" method="post">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="firstname">First Name</label>
-                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Nick" required>
+                    <label id="firstname-label" for="firstname">First Name</label>
+                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Nick" aria-labelledby="firstname-label" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="lastname">Last Name</label>
-                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Smith" required>
+                    <label id="lastname-label" for="lastname">Last Name</label>
+                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Smith" aria-labelledby="lastname-label" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
+                    <label id="email-label" for="email">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Email" aria-labelledby="email-label" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control" id="password" placeholder="Password"
-                        required>
+                    <label id="password-label" for="password">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password" aria-labelledby="password-label" required>
                 </div>
             </div>
             <div class="form-group">
-                <label for="address">Street Address</label>
-                <input type="text" name="address" class="form-control" id="address" placeholder="123 Tester Rd"
-                    required>
+                <label id="address-label" for="address">Street Address</label>
+                <input type="text" name="address" class="form-control" id="address" placeholder="123 Tester Rd" aria-labelledby="address-label" required>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="city">City</label>
-                    <input type="text" name="city" class="form-control" id="city" placeholder="Toronto" required>
+                    <label id="city-label" for="city">City</label>
+                    <input type="text" name="city" class="form-control" id="city" placeholder="Toronto" aria-labelledby="city-label" required>
                 </div>
                 <div class="form-group col-md-2 col-6">
-                    <label for="province">Province</label>
-                    <input type="text" name="province" class="form-control" id="province" placeholder="ON" required>
+                    <label id="province-label" for="province">Province</label>
+                    <input type="text" name="province" class="form-control" id="province" placeholder="ON" aria-labelledby="province-label" required>
                 </div>
                 <div class="form-group col-md-2 col-6">
-                    <label for="postalcode">Postal Code</label>
+                    <label id="postal-label" for="postalcode">Postal Code</label>
                     <input type="text" name="postalcode" class="form-control" id="postalcode" minlength="5"
-                        maxlength="6" placeholder="R4T5Y4" required>
+                        maxlength="6" placeholder="R4T5Y4" aria-labelledby="postal-label" required>
                 </div>
                 <div class="form-group col-md-2">
-                    <label for="country">Country</label>
-                    <input type="text" name="country" class="form-control" id="country" placeholder="Canada" required>
+                    <label id="country-label" for="country">Country</label>
+                    <input type="text" name="country" class="form-control" id="country" placeholder="Canada" aria-labelledby="country-label" required>
                 </div>
             </div>
             <div class="mb-3"></div>
