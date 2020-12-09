@@ -2,7 +2,7 @@
 <form>
     <div class="form-row">
         <div class="col-md-7">
-            <input type="text" id="filter" onkeyup="filterGroups()" class="form-control" placeholder="Search groups">
+            <input aria-label="Search group" type="text" id="filter" onkeyup="filterGroups()" class="form-control" placeholder="Search groups">
         </div>
         <div class="col-md">
             <button id="joined" type="button" class="form-control btn btn-light active">My groups</button>
@@ -23,18 +23,18 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Create a New Group</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button aria-label="Close" type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="group-name" class="col-form-label">Group Name</label> 
-                        <input type="text" class="form-control" id="group-name" name="group-name" required>
+                        <label id="group-name-label" for="group-name" class="col-form-label">Group Name</label> 
+                        <input type="text" class="form-control" id="group-name" name="group-name" aria-labelledby="group-name-label" required>
                         <div id="group-name-feedback" class="text-danger d-none">Group name taken</div>
                     </div>
                     <div class="form-group">
-                        <label for="group-descr" class="col-form-label">Group Description</label> 
-                        <textarea class="form-control" id="group-descr" name="group-descr"></textarea>
+                        <label id="group-description-label" for="group-descr" class="col-form-label">Group Description</label> 
+                        <textarea class="form-control" id="group-descr" name="group-descr" aria-labelledby="group-description-label"></textarea>
                     </div>
                 </form>
             </div>
